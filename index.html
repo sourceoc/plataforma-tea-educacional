@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Plataforma de Alfabetização para Crianças Autistas</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="Plataforma educacional inclusiva para alfabetização de crianças autistas com recursos adaptados e interativos">
+    <meta name="keywords" content="alfabetização, autismo, educação especial, educação inclusiva">
+    <meta name="theme-color" content="#4fc3f7">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    
+    <!-- Suporte a PWA -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Alfabetização Autismo">
+    
+    <!-- Google Fonts para tipografia moderna -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&family=Nunito:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- CSS principal -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="theme-blue">
+    <!-- Toolbar -->
+    <div class="toolbar">
+        <button id="profileBtn" class="toolbar-btn" title="Perfil do Usuário" aria-label="Abrir perfil">
+            <span id="currentAvatar">👧</span>
+        </button>
+        <button id="achievementsBtn" class="toolbar-btn" title="Conquistas" aria-label="Ver conquistas">🏆</button>
+        <button id="settingsBtn" class="toolbar-btn" title="Configurações" aria-label="Abrir configurações">⚙️</button>
+        <button id="helpGuideBtn" class="toolbar-btn" title="Guia de Ajuda" aria-label="Ver guia de ajuda">❓</button>
+        <button id="projectInfoBtn" class="toolbar-btn" title="Sobre o Projeto" aria-label="Informações do projeto">ℹ️</button>
+        <button id="helpBtn" class="toolbar-btn" title="Ajuda" aria-label="Obter ajuda">🆘</button>
+    </div>
+
+    <!-- Container Principal -->
+    <div class="container">
+        <header>
+            <h1 class="rainbow-text">🌟 Plataforma de Alfabetização TEA 🌟</h1>
+            <p>✨ Aprender é uma aventura mágica e divertida! ✨</p>
+        </header>
+
+        <main>
+            <div class="mode-selector">
+                <label for="modeSelect" class="sr-only">Escolha o modo de aprendizado</label>
+                <select id="modeSelect" aria-label="Selecionar modo de aprendizado">
+                    <option value="cores">🎨 Cores</option>
+                    <option value="alfabeto">🔤 Alfabeto</option>
+                    <option value="vogais">🅰️ Vogais</option>
+                    <option value="animais">🐾 Animais</option>
+                    <option value="alimentos">🍎 Alimentos</option>
+                    <option value="transportes">🚗 Transportes</option>
+                    <option value="silabas">📝 Sílabas</option>
+                    <option value="numeros">🔢 Números</option>
+                    <option value="emocoes">😊 Emoções</option>
+                    <option value="rotina">⏰ Rotina</option>
+                    <option value="frases">💬 Frases</option>
+                    <option value="jogos">🎮 Jogos</option>
+                </select>
+            </div>
+
+            <div id="activity" class="activity-area" role="main" aria-live="polite">
+                <!-- Conteúdo será carregado dinamicamente -->
+            </div>
+
+            <div class="navigation">
+                <button id="prevBtn" class="nav-btn" aria-label="Item anterior">
+                    <span>⬅️</span> Anterior
+                </button>
+                <div id="progress" class="progress-indicator">
+                    <div class="progress-bar">
+                        <div class="progress-bar-fill" style="width: 0%"></div>
+                    </div>
+                    <div class="progress-text">0 / 0</div>
+                </div>
+                <button id="nextBtn" class="nav-btn" aria-label="Próximo item">
+                    Próximo <span>➡️</span>
+                </button>
+            </div>
+        </main>
+    </div>
+
+    <!-- Modal do Perfil -->
+    <div id="profileModal" class="modal" role="dialog" aria-labelledby="profileTitle">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="profileTitle">👤 Meu Perfil</h2>
+                <button class="close-button" aria-label="Fechar modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="profile-section">
+                    <div class="current-avatar">
+                        <span class="current-avatar-display">👧</span>
+                    </div>
+                    <h3>Escolha seu Avatar:</h3>
+                    <div class="avatar-grid">
+                        <div class="avatar-option" data-avatar="👧" role="button" tabindex="0">👧</div>
+                        <div class="avatar-option" data-avatar="👦" role="button" tabindex="0">👦</div>
+                        <div class="avatar-option" data-avatar="🧒" role="button" tabindex="0">🧒</div>
+                        <div class="avatar-option" data-avatar="👶" role="button" tabindex="0">👶</div>
+                        <div class="avatar-option" data-avatar="🐻" role="button" tabindex="0">🐻</div>
+                        <div class="avatar-option" data-avatar="🐱" role="button" tabindex="0">🐱</div>
+                        <div class="avatar-option" data-avatar="🐶" role="button" tabindex="0">🐶</div>
+                        <div class="avatar-option" data-avatar="🦄" role="button" tabindex="0">🦄</div>
+                    </div>
+                </div>
+                
+                <div class="stats-section">
+                    <h3>📊 Estatísticas</h3>
+                    <div class="stat-item">
+                        <span>Nível:</span>
+                        <span id="userLevel">1</span>
+                    </div>
+                    <div class="stat-item">
+                        <span>Conquistas:</span>
+                        <span id="achievementCount">0</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-bar-fill"></div>
+                    </div>
+                </div>
+
+                <div class="activity-section">
+                    <h3>📈 Atividade Recente</h3>
+                    <div id="activityLog" class="activity-log">
+                        <!-- Logs de atividade serão inseridos aqui -->
+                    </div>
+                </div>
+
+                <div class="achievements-preview">
+                    <h3>🏆 Conquistas Recentes</h3>
+                    <div id="userAchievements" class="achievements-grid">
+                        <!-- Conquistas serão inseridas aqui -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Conquistas -->
+    <div id="achievementsModal" class="modal" role="dialog" aria-labelledby="achievementsTitle">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="achievementsTitle">🏆 Suas Conquistas</h2>
+                <button class="close-button" aria-label="Fechar modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="achievements-grid">
+                    <!-- Conquistas serão carregadas dinamicamente -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Configurações -->
+    <div id="settingsModal" class="modal" role="dialog" aria-labelledby="settingsTitle">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="settingsTitle">⚙️ Configurações de Acessibilidade</h2>
+                <button class="close-button" aria-label="Fechar modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="settings-section">
+                    <h3>🎨 Aparência & Temas</h3>
+                    <div class="setting-item">
+                        <label for="themeSelect">Escolha seu tema favorito:</label>
+                        <select id="themeSelect" class="theme-selector">
+                            <option value="theme-blue">💙 Azul Oceano</option>
+                            <option value="theme-purple">💜 Roxo Místico</option>
+                            <option value="theme-pink">💗 Rosa Encantado</option>
+                            <option value="theme-green">💚 Verde Natureza</option>
+                            <option value="theme-orange">🧡 Laranja Energia</option>
+                        </select>
+                    </div>
+                    <div class="setting-item">
+                        <label for="highContrast">
+                            <input type="checkbox" id="highContrast"> 🔍 Alto Contraste
+                        </label>
+                    </div>
+                    <div class="setting-item">
+                        <label for="biggerText">
+                            <input type="checkbox" id="biggerText"> 📝 Texto Maior
+                        </label>
+                    </div>
+                    <div class="setting-item">
+                        <label for="emojiSize">🎭 Tamanho dos Emojis:</label>
+                        <input type="range" id="emojiSize" min="0.5" max="2" step="0.1" value="1">
+                    </div>
+                </div>
+
+                <div class="settings-section">
+                    <h3>🎵 Som e Interação</h3>
+                    <div class="setting-item">
+                        <label for="autoPlay">
+                            <input type="checkbox" id="autoPlay"> 🔄 Reprodução Automática
+                        </label>
+                    </div>
+                    <div class="setting-item">
+                        <label for="repeatAudio">
+                            <input type="checkbox" id="repeatAudio"> 🔁 Repetir Áudio
+                        </label>
+                    </div>
+                    <div class="setting-item">
+                        <label for="soundVolume">🔊 Volume do Som:</label>
+                        <input type="range" id="soundVolume" min="0" max="1" step="0.1" value="0.8">
+                    </div>
+                </div>
+
+                <div class="settings-section">
+                    <h3>🎭 Animações & Efeitos</h3>
+                    <div class="setting-item">
+                        <label for="animations">
+                            <input type="checkbox" id="animations" checked> ✨ Animações Divertidas
+                        </label>
+                    </div>
+                    <div class="setting-item">
+                        <label for="particleEffects">
+                            <input type="checkbox" id="particleEffects" checked> 🎆 Efeitos de Partículas
+                        </label>
+                    </div>
+                    <div class="setting-item">
+                        <label for="glowEffects">
+                            <input type="checkbox" id="glowEffects" checked> 💫 Efeitos de Brilho
+                        </label>
+                    </div>
+                </div>
+
+                <div class="settings-section">
+                    <h3>🧭 Navegação & Acessibilidade</h3>
+                    <div class="setting-item">
+                        <label for="showGuide">
+                            <input type="checkbox" id="showGuide" checked> 📖 Mostrar Guias Visuais
+                        </label>
+                    </div>
+                    <div class="setting-item">
+                        <label for="showProgress">
+                            <input type="checkbox" id="showProgress" checked> 📊 Mostrar Progresso
+                        </label>
+                    </div>
+                    <div class="setting-item">
+                        <label for="useKeyboard">
+                            <input type="checkbox" id="useKeyboard" checked> ⌨️ Navegação por Teclado
+                        </label>
+                    </div>
+                    <div class="setting-item">
+                        <label for="voiceInstructions">
+                            <input type="checkbox" id="voiceInstructions"> 🎤 Instruções por Voz
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Ajuda -->
+    <div id="helpModal" class="modal" role="dialog" aria-labelledby="helpTitle">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="helpTitle">❓ Como Usar</h2>
+                <button class="close-button" aria-label="Fechar modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="help-section">
+                    <h3>🎯 Navegação</h3>
+                    <p>• Use os botões ⬅️ ➡️ para navegar entre os itens</p>
+                    <p>• Clique no menu suspenso para escolher o que estudar</p>
+                    <p>• Use as setas do teclado para navegar (se ativado)</p>
+                </div>
+
+                <div class="help-section">
+                    <h3>🎮 Jogos</h3>
+                    <p>• Escolha "Jogos" no menu para acessar atividades interativas</p>
+                    <p>• Jogo da Memória: encontre os pares iguais</p>
+                    <p>• Jogo de Cores: clique na cor solicitada</p>
+                    <p>• Contagem: conte os objetos na tela</p>
+                </div>
+
+                <div class="help-section">
+                    <h3>⚙️ Configurações</h3>
+                    <p>• Alto Contraste: melhora a visibilidade</p>
+                    <p>• Texto Maior: aumenta o tamanho das letras</p>
+                    <p>• Navegação por Teclado: permite usar as setas</p>
+                </div>
+
+                <div class="help-section">
+                    <h3>🏆 Conquistas</h3>
+                    <p>• Complete atividades para desbloquear conquistas</p>
+                    <p>• Seu progresso é salvo automaticamente</p>
+                    <p>• Visite seu perfil para ver estatísticas</p>
+                </div>
+
+                <div class="help-section">
+                    <h3>🎨 Personalização</h3>
+                    <p>• Escolha seu avatar favorito no perfil</p>
+                    <p>• Ajuste o tamanho dos emojis nas configurações</p>
+                    <p>• Ative o modo de alto contraste se necessário</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Informações do Projeto -->
+    <div id="projectInfoModal" class="modal" role="dialog" aria-labelledby="projectInfoTitle">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="projectInfoTitle">ℹ️ Sobre o Projeto</h2>
+                <button class="close-button" aria-label="Fechar modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="info-section">
+                    <h3>📚 Plataforma de Alfabetização TEA</h3>
+                    <p>Uma ferramenta educacional desenvolvida especialmente para crianças no espectro autista, focando em métodos visuais e interativos de aprendizagem.</p>
+                </div>
+
+                <div class="info-section">
+                    <h3>🎯 Objetivos</h3>
+                    <ul>
+                        <li>Promover a alfabetização de forma inclusiva</li>
+                        <li>Desenvolver habilidades cognitivas</li>
+                        <li>Estimular a comunicação</li>
+                        <li>Criar um ambiente de aprendizado seguro</li>
+                    </ul>
+                </div>
+
+                <div class="info-section">
+                    <h3>✨ Características</h3>
+                    <ul>
+                        <li>Interface amigável e acessível</li>
+                        <li>Conteúdo educativo diversificado</li>
+                        <li>Jogos interativos</li>
+                        <li>Sistema de conquistas motivacional</li>
+                        <li>Configurações de acessibilidade</li>
+                    </ul>
+                </div>
+
+                <div class="info-section">
+                    <h3>🛠️ Tecnologias</h3>
+                    <p>HTML5, CSS3, JavaScript (ES6+)</p>
+                    <p>Design Responsivo, PWA Ready</p>
+                </div>
+
+                <div class="info-section">
+                    <h3>❤️ Compromisso</h3>
+                    <p>Este projeto é desenvolvido com amor e dedicação para promover a inclusão educacional e apoiar o desenvolvimento de crianças autistas.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notificação Moderna -->
+    <div id="notification" class="notification" aria-live="assertive" aria-atomic="true">
+        <div class="notification-icon">🎉</div>
+        <div class="notification-content">
+            <!-- Mensagens serão exibidas aqui -->
+        </div>
+        <button class="notification-close" aria-label="Fechar notificação">×</button>
+    </div>
+
+    <!-- JavaScript principal -->
+    <script src="script.js"></script>
+</body>
+</html>
