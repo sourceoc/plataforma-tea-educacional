@@ -64,6 +64,11 @@
 
             <div id="activity" class="activity-area" role="main" aria-live="polite">
                 <!-- Conteúdo será carregado dinamicamente -->
+                <div class="loading-placeholder">
+                    <div class="emoji animated">🌟</div>
+                    <div class="word">Carregando...</div>
+                    <p>Preparando sua aventura de aprendizado!</p>
+                </div>
             </div>
 
             <div class="navigation">
@@ -93,47 +98,64 @@
             <div class="modal-body">
                 <div class="profile-section">
                     <div class="current-avatar">
-                        <span class="current-avatar-display">👧</span>
+                        <span id="currentAvatar" class="current-avatar-display">👧</span>
                     </div>
                     <h3>Escolha seu Avatar:</h3>
                     <div class="avatar-grid">
-                        <div class="avatar-option" data-avatar="👧" role="button" tabindex="0">👧</div>
-                        <div class="avatar-option" data-avatar="👦" role="button" tabindex="0">👦</div>
-                        <div class="avatar-option" data-avatar="🧒" role="button" tabindex="0">🧒</div>
-                        <div class="avatar-option" data-avatar="👶" role="button" tabindex="0">👶</div>
-                        <div class="avatar-option" data-avatar="🐻" role="button" tabindex="0">🐻</div>
-                        <div class="avatar-option" data-avatar="🐱" role="button" tabindex="0">🐱</div>
-                        <div class="avatar-option" data-avatar="🐶" role="button" tabindex="0">🐶</div>
-                        <div class="avatar-option" data-avatar="🦄" role="button" tabindex="0">🦄</div>
+                        <div class="avatar-option" data-avatar="👧" role="button" tabindex="0" aria-label="Avatar menina">👧</div>
+                        <div class="avatar-option" data-avatar="👦" role="button" tabindex="0" aria-label="Avatar menino">👦</div>
+                        <div class="avatar-option" data-avatar="🧒" role="button" tabindex="0" aria-label="Avatar criança">🧒</div>
+                        <div class="avatar-option" data-avatar="👶" role="button" tabindex="0" aria-label="Avatar bebê">👶</div>
+                        <div class="avatar-option" data-avatar="🐻" role="button" tabindex="0" aria-label="Avatar urso">🐻</div>
+                        <div class="avatar-option" data-avatar="🐱" role="button" tabindex="0" aria-label="Avatar gato">🐱</div>
+                        <div class="avatar-option" data-avatar="🐶" role="button" tabindex="0" aria-label="Avatar cachorro">🐶</div>
+                        <div class="avatar-option" data-avatar="🦄" role="button" tabindex="0" aria-label="Avatar unicórnio">🦄</div>
+                        <div class="avatar-option" data-avatar="🦸" role="button" tabindex="0" aria-label="Avatar super-herói">🦸</div>
+                        <div class="avatar-option" data-avatar="🧙" role="button" tabindex="0" aria-label="Avatar mago">🧙</div>
+                        <div class="avatar-option" data-avatar="👩‍🚀" role="button" tabindex="0" aria-label="Avatar astronauta">👩‍🚀</div>
+                        <div class="avatar-option" data-avatar="🦋" role="button" tabindex="0" aria-label="Avatar borboleta">🦋</div>
                     </div>
                 </div>
                 
                 <div class="stats-section">
                     <h3>📊 Estatísticas</h3>
-                    <div class="stat-item">
-                        <span>Nível:</span>
-                        <span id="userLevel">1</span>
-                    </div>
-                    <div class="stat-item">
-                        <span>Conquistas:</span>
-                        <span id="achievementCount">0</span>
-                    </div>
-                    <div class="progress-bar">
-                        <div class="progress-bar-fill"></div>
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <span class="stat-label">Nível:</span>
+                            <span id="userLevel" class="stat-value">1</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Conquistas:</span>
+                            <span id="achievementCount" class="stat-value">0</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Progresso Geral:</span>
+                            <div class="progress-bar">
+                                <div class="progress-bar-fill" style="width: 0%"></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
                 <div class="activity-section">
                     <h3>📈 Atividade Recente</h3>
                     <div id="activityLog" class="activity-log">
-                        <!-- Logs de atividade serão inseridos aqui -->
+                        <div class="activity-item">🎯 Bem-vindo à plataforma!</div>
+                        <div class="activity-item">📚 Pronto para aprender!</div>
                     </div>
                 </div>
 
                 <div class="achievements-preview">
                     <h3>🏆 Conquistas Recentes</h3>
                     <div id="userAchievements" class="achievements-grid">
-                        <!-- Conquistas serão inseridas aqui -->
+                        <!-- Conquistas serão inseridas aqui dinamicamente -->
+                        <div class="achievement locked">
+                            <span class="achievement-icon">📝</span>
+                            <div class="achievement-info">
+                                <h4>Primeira Letra</h4>
+                                <p>Aprenda sua primeira letra!</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -148,8 +170,20 @@
                 <button class="close-button" aria-label="Fechar modal">&times;</button>
             </div>
             <div class="modal-body">
-                <div class="achievements-grid">
-                    <!-- Conquistas serão carregadas dinamicamente -->
+                <div class="achievements-container">
+                    <div class="achievements-summary">
+                        <div class="summary-stat">
+                            <div class="summary-number" id="totalAchievements">0</div>
+                            <div class="summary-label">Conquistas Desbloqueadas</div>
+                        </div>
+                        <div class="summary-stat">
+                            <div class="summary-number" id="completionPercentage">0%</div>
+                            <div class="summary-label">Progresso Total</div>
+                        </div>
+                    </div>
+                    <div class="achievements-grid">
+                        <!-- Conquistas serão carregadas dinamicamente -->
+                    </div>
                 </div>
             </div>
         </div>
@@ -166,64 +200,84 @@
                 <div class="settings-section">
                     <h3>🎨 Aparência & Temas</h3>
                     <div class="setting-item">
-                        <label for="themeSelect">Escolha seu tema favorito:</label>
+                        <label for="themeSelect" class="setting-label">Escolha seu tema favorito:</label>
                         <select id="themeSelect" class="theme-selector">
-                            <option value="theme-blue">💙 Azul Oceano</option>
-                            <option value="theme-purple">💜 Roxo Místico</option>
-                            <option value="theme-pink">💗 Rosa Encantado</option>
-                            <option value="theme-green">💚 Verde Natureza</option>
-                            <option value="theme-orange">🧡 Laranja Energia</option>
+                            <option value="blue">💙 Azul Oceano</option>
+                            <option value="purple">💜 Roxo Místico</option>
+                            <option value="pink">💗 Rosa Encantado</option>
+                            <option value="green">💚 Verde Natureza</option>
+                            <option value="orange">🧡 Laranja Energia</option>
                         </select>
                     </div>
                     <div class="setting-item">
-                        <label for="highContrast">
-                            <input type="checkbox" id="highContrast"> 🔍 Alto Contraste
+                        <label for="highContrast" class="checkbox-label">
+                            <input type="checkbox" id="highContrast"> 
+                            <span class="checkmark"></span>
+                            🔍 Alto Contraste
                         </label>
                     </div>
                     <div class="setting-item">
-                        <label for="biggerText">
-                            <input type="checkbox" id="biggerText"> 📝 Texto Maior
+                        <label for="biggerText" class="checkbox-label">
+                            <input type="checkbox" id="biggerText"> 
+                            <span class="checkmark"></span>
+                            📝 Texto Maior
                         </label>
                     </div>
                     <div class="setting-item">
-                        <label for="emojiSize">🎭 Tamanho dos Emojis:</label>
-                        <input type="range" id="emojiSize" min="0.5" max="2" step="0.1" value="1">
+                        <label for="emojiSize" class="setting-label">🎭 Tamanho dos Emojis:</label>
+                        <div class="slider-container">
+                            <input type="range" id="emojiSize" min="0.5" max="2" step="0.1" value="1" class="slider">
+                            <div class="slider-value">1.0x</div>
+                        </div>
                     </div>
                 </div>
 
                 <div class="settings-section">
                     <h3>🎵 Som e Interação</h3>
                     <div class="setting-item">
-                        <label for="autoPlay">
-                            <input type="checkbox" id="autoPlay"> 🔄 Reprodução Automática
+                        <label for="autoPlay" class="checkbox-label">
+                            <input type="checkbox" id="autoPlay"> 
+                            <span class="checkmark"></span>
+                            🔄 Reprodução Automática
                         </label>
                     </div>
                     <div class="setting-item">
-                        <label for="repeatAudio">
-                            <input type="checkbox" id="repeatAudio"> 🔁 Repetir Áudio
+                        <label for="repeatAudio" class="checkbox-label">
+                            <input type="checkbox" id="repeatAudio"> 
+                            <span class="checkmark"></span>
+                            🔁 Repetir Áudio
                         </label>
                     </div>
                     <div class="setting-item">
-                        <label for="soundVolume">🔊 Volume do Som:</label>
-                        <input type="range" id="soundVolume" min="0" max="1" step="0.1" value="0.8">
+                        <label for="soundVolume" class="setting-label">🔊 Volume do Som:</label>
+                        <div class="slider-container">
+                            <input type="range" id="soundVolume" min="0" max="1" step="0.1" value="0.8" class="slider">
+                            <div class="slider-value">80%</div>
+                        </div>
                     </div>
                 </div>
 
                 <div class="settings-section">
                     <h3>🎭 Animações & Efeitos</h3>
                     <div class="setting-item">
-                        <label for="animations">
-                            <input type="checkbox" id="animations" checked> ✨ Animações Divertidas
+                        <label for="animations" class="checkbox-label">
+                            <input type="checkbox" id="animations" checked> 
+                            <span class="checkmark"></span>
+                            ✨ Animações Divertidas
                         </label>
                     </div>
                     <div class="setting-item">
-                        <label for="particleEffects">
-                            <input type="checkbox" id="particleEffects" checked> 🎆 Efeitos de Partículas
+                        <label for="particleEffects" class="checkbox-label">
+                            <input type="checkbox" id="particleEffects" checked> 
+                            <span class="checkmark"></span>
+                            🎆 Efeitos de Partículas
                         </label>
                     </div>
                     <div class="setting-item">
-                        <label for="glowEffects">
-                            <input type="checkbox" id="glowEffects" checked> 💫 Efeitos de Brilho
+                        <label for="glowEffects" class="checkbox-label">
+                            <input type="checkbox" id="glowEffects" checked> 
+                            <span class="checkmark"></span>
+                            💫 Efeitos de Brilho
                         </label>
                     </div>
                 </div>
@@ -231,25 +285,38 @@
                 <div class="settings-section">
                     <h3>🧭 Navegação & Acessibilidade</h3>
                     <div class="setting-item">
-                        <label for="showGuide">
-                            <input type="checkbox" id="showGuide" checked> 📖 Mostrar Guias Visuais
+                        <label for="showGuide" class="checkbox-label">
+                            <input type="checkbox" id="showGuide" checked> 
+                            <span class="checkmark"></span>
+                            📖 Mostrar Guias Visuais
                         </label>
                     </div>
                     <div class="setting-item">
-                        <label for="showProgress">
-                            <input type="checkbox" id="showProgress" checked> 📊 Mostrar Progresso
+                        <label for="showProgress" class="checkbox-label">
+                            <input type="checkbox" id="showProgress" checked> 
+                            <span class="checkmark"></span>
+                            📊 Mostrar Progresso
                         </label>
                     </div>
                     <div class="setting-item">
-                        <label for="useKeyboard">
-                            <input type="checkbox" id="useKeyboard" checked> ⌨️ Navegação por Teclado
+                        <label for="useKeyboard" class="checkbox-label">
+                            <input type="checkbox" id="useKeyboard" checked> 
+                            <span class="checkmark"></span>
+                            ⌨️ Navegação por Teclado
                         </label>
                     </div>
                     <div class="setting-item">
-                        <label for="voiceInstructions">
-                            <input type="checkbox" id="voiceInstructions"> 🎤 Instruções por Voz
+                        <label for="voiceInstructions" class="checkbox-label">
+                            <input type="checkbox" id="voiceInstructions"> 
+                            <span class="checkmark"></span>
+                            🎤 Instruções por Voz
                         </label>
                     </div>
+                </div>
+
+                <div class="settings-actions">
+                    <button id="saveSettings" class="action-btn primary">💾 Salvar Configurações</button>
+                    <button id="resetSettings" class="action-btn secondary">🔄 Restaurar Padrão</button>
                 </div>
             </div>
         </div>
@@ -263,40 +330,101 @@
                 <button class="close-button" aria-label="Fechar modal">&times;</button>
             </div>
             <div class="modal-body">
-                <div class="help-section">
-                    <h3>🎯 Navegação</h3>
-                    <p>• Use os botões ⬅️ ➡️ para navegar entre os itens</p>
-                    <p>• Clique no menu suspenso para escolher o que estudar</p>
-                    <p>• Use as setas do teclado para navegar (se ativado)</p>
+                <div class="help-tabs">
+                    <button class="help-tab active" data-tab="navigation">🧭 Navegação</button>
+                    <button class="help-tab" data-tab="games">🎮 Jogos</button>
+                    <button class="help-tab" data-tab="settings">⚙️ Configurações</button>
+                    <button class="help-tab" data-tab="achievements">🏆 Conquistas</button>
                 </div>
 
-                <div class="help-section">
-                    <h3>🎮 Jogos</h3>
-                    <p>• Escolha "Jogos" no menu para acessar atividades interativas</p>
-                    <p>• Jogo da Memória: encontre os pares iguais</p>
-                    <p>• Jogo de Cores: clique na cor solicitada</p>
-                    <p>• Contagem: conte os objetos na tela</p>
-                </div>
+                <div class="help-content">
+                    <div class="help-section active" data-section="navigation">
+                        <h3>🎯 Como Navegar</h3>
+                        <div class="help-item">
+                            <div class="help-icon">⬅️➡️</div>
+                            <div class="help-text">
+                                <strong>Botões de Navegação:</strong> Use os botões "Anterior" e "Próximo" para navegar entre os itens.
+                            </div>
+                        </div>
+                        <div class="help-item">
+                            <div class="help-icon">📋</div>
+                            <div class="help-text">
+                                <strong>Menu de Categorias:</strong> Clique no menu suspenso para escolher o que estudar (cores, alfabeto, números, etc.).
+                            </div>
+                        </div>
+                        <div class="help-item">
+                            <div class="help-icon">⌨️</div>
+                            <div class="help-text">
+                                <strong>Teclado:</strong> Use as setas do teclado para navegar (se ativado nas configurações).
+                            </div>
+                        </div>
+                    </div>
 
-                <div class="help-section">
-                    <h3>⚙️ Configurações</h3>
-                    <p>• Alto Contraste: melhora a visibilidade</p>
-                    <p>• Texto Maior: aumenta o tamanho das letras</p>
-                    <p>• Navegação por Teclado: permite usar as setas</p>
-                </div>
+                    <div class="help-section" data-section="games">
+                        <h3>🎮 Jogos Interativos</h3>
+                        <div class="help-item">
+                            <div class="help-icon">🎯</div>
+                            <div class="help-text">
+                                <strong>Jogo da Memória:</strong> Encontre os pares iguais clicando nas cartas. Desenvolve concentração e memória visual.
+                            </div>
+                        </div>
+                        <div class="help-item">
+                            <div class="help-icon">🎨</div>
+                            <div class="help-text">
+                                <strong>Jogo de Cores:</strong> Clique na cor solicitada. Ajuda no reconhecimento de cores e nomes.
+                            </div>
+                        </div>
+                        <div class="help-item">
+                            <div class="help-icon">🔢</div>
+                            <div class="help-text">
+                                <strong>Contagem:</strong> Conte os objetos na tela e clique no número correto. Desenvolve habilidades matemáticas básicas.
+                            </div>
+                        </div>
+                    </div>
 
-                <div class="help-section">
-                    <h3>🏆 Conquistas</h3>
-                    <p>• Complete atividades para desbloquear conquistas</p>
-                    <p>• Seu progresso é salvo automaticamente</p>
-                    <p>• Visite seu perfil para ver estatísticas</p>
-                </div>
+                    <div class="help-section" data-section="settings">
+                        <h3>⚙️ Personalizações</h3>
+                        <div class="help-item">
+                            <div class="help-icon">🔍</div>
+                            <div class="help-text">
+                                <strong>Alto Contraste:</strong> Melhora a visibilidade com cores mais contrastantes.
+                            </div>
+                        </div>
+                        <div class="help-item">
+                            <div class="help-icon">📝</div>
+                            <div class="help-text">
+                                <strong>Texto Maior:</strong> Aumenta o tamanho das letras para melhor legibilidade.
+                            </div>
+                        </div>
+                        <div class="help-item">
+                            <div class="help-icon">🎭</div>
+                            <div class="help-text">
+                                <strong>Tamanho dos Emojis:</strong> Ajuste o tamanho dos emojis para sua preferência.
+                            </div>
+                        </div>
+                    </div>
 
-                <div class="help-section">
-                    <h3>🎨 Personalização</h3>
-                    <p>• Escolha seu avatar favorito no perfil</p>
-                    <p>• Ajuste o tamanho dos emojis nas configurações</p>
-                    <p>• Ative o modo de alto contraste se necessário</p>
+                    <div class="help-section" data-section="achievements">
+                        <h3>🏆 Sistema de Conquistas</h3>
+                        <div class="help-item">
+                            <div class="help-icon">🎖️</div>
+                            <div class="help-text">
+                                <strong>Desbloqueie Conquistas:</strong> Complete atividades para desbloquear medalhas especiais.
+                            </div>
+                        </div>
+                        <div class="help-item">
+                            <div class="help-icon">💾</div>
+                            <div class="help-text">
+                                <strong>Progresso Salvo:</strong> Seu progresso é automaticamente salvo no navegador.
+                            </div>
+                        </div>
+                        <div class="help-item">
+                            <div class="help-icon">📊</div>
+                            <div class="help-text">
+                                <strong>Estatísticas:</strong> Visite seu perfil para ver estatísticas detalhadas do seu aprendizado.
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -350,8 +478,8 @@
         </div>
     </div>
 
-    <!-- Notificação Moderna -->
-    <div id="notification" class="notification" aria-live="assertive" aria-atomic="true">
+    <!-- Sistema de Notificação Aprimorado -->
+    <div id="notification" class="notification" aria-live="assertive" aria-atomic="true" role="alert">
         <div class="notification-icon">🎉</div>
         <div class="notification-content">
             <!-- Mensagens serão exibidas aqui -->
@@ -359,7 +487,59 @@
         <button class="notification-close" aria-label="Fechar notificação">×</button>
     </div>
 
+    <!-- Sistema de Loading -->
+    <div id="loadingOverlay" class="loading-overlay" style="display: none;">
+        <div class="loading-spinner">
+            <div class="spinner-emoji">🌟</div>
+            <div class="loading-text">Carregando...</div>
+        </div>
+    </div>
+
+    <!-- Feedback Visual para Texto-para-Fala -->
+    <div id="textFeedback" class="text-feedback" style="display: none;">
+        <!-- Texto será inserido dinamicamente -->
+    </div>
+
     <!-- JavaScript principal -->
     <script src="script.js"></script>
+
+    <!-- Script para funcionalidades dos modais de ajuda -->
+    <script>
+        // Funcionalidade das abas do modal de ajuda
+        document.addEventListener('DOMContentLoaded', function() {
+            const helpTabs = document.querySelectorAll('.help-tab');
+            const helpSections = document.querySelectorAll('.help-section');
+
+            helpTabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    const tabTarget = this.getAttribute('data-tab');
+                    
+                    // Remove active de todas as abas e seções
+                    helpTabs.forEach(t => t.classList.remove('active'));
+                    helpSections.forEach(s => s.classList.remove('active'));
+                    
+                    // Adiciona active na aba clicada e seção correspondente
+                    this.classList.add('active');
+                    document.querySelector(`[data-section="${tabTarget}"]`).classList.add('active');
+                });
+            });
+
+            // Funcionalidade dos sliders com valores dinâmicos
+            const sliders = document.querySelectorAll('.slider');
+            sliders.forEach(slider => {
+                const valueDisplay = slider.parentNode.querySelector('.slider-value');
+                if (valueDisplay) {
+                    slider.addEventListener('input', function() {
+                        let value = this.value;
+                        if (this.id === 'emojiSize') {
+                            valueDisplay.textContent = value + 'x';
+                        } else if (this.id === 'soundVolume') {
+                            valueDisplay.textContent = Math.round(value * 100) + '%';
+                        }
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 </html>

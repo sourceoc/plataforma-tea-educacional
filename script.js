@@ -132,8 +132,8 @@ const conteudo = {
         { item: '🐞', nome: 'J', descricao: 'J de JOANINHA 🐞 - décima letra do alfabeto!' },
         { item: '🥝', nome: 'K', descricao: 'K de KIWI 🥝 - décima primeira letra!' },
         { item: '🦁', nome: 'L', descricao: 'L de LEÃO 🦁 - décima segunda letra!' },
-        { item: '🎵', nome: 'M', descricao: 'M de MÚSICA 🎵 - décima terceira letra!' },
-        { item: '⭐', nome: 'N', descricao: 'N de NATAL ⭐ - décima quarta letra!' },
+        { item: '🐒', nome: 'M', descricao: 'M de MACACO 🐒 - décima terceira letra!' },
+        { item: '☁️', nome: 'N', descricao: 'N de NUVEM ☁️ - décima quarta letra!' },
         { item: '🥚', nome: 'O', descricao: 'O de OVO 🥚 - décima quinta letra!' },
         { item: '🐧', nome: 'P', descricao: 'P de PINGUIM 🐧 - décima sexta letra!' },
         { item: '🧀', nome: 'Q', descricao: 'Q de QUEIJO 🧀 - décima sétima letra!' },
@@ -141,9 +141,9 @@ const conteudo = {
         { item: '☀️', nome: 'S', descricao: 'S de SOL ☀️ - décima nona letra!' },
         { item: '🐢', nome: 'T', descricao: 'T de TARTARUGA 🐢 - vigésima letra!' },
         { item: '🍇', nome: 'U', descricao: 'U de UVA 🍇 - vigésima primeira letra!' },
-        { item: '✈️', nome: 'V', descricao: 'V de VIÃO ✈️ - vigésima segunda letra!' },
-        { item: '🌟', nome: 'W', descricao: 'W de WHISTLE (apito) 🌟 - vigésima terceira letra!' },
-        { item: '🎯', nome: 'X', descricao: 'X de XÍCARA (som) 🎯 - vigésima quarta letra!' },
+        { item: '🐄', nome: 'V', descricao: 'V de VACA 🐄 - vigésima segunda letra!' },
+        { item: '🧸', nome: 'W', descricao: 'W de URSO WASHINGTON 🧸 - vigésima terceira letra!' },
+        { item: '🌿', nome: 'X', descricao: 'X de XAXIM 🌿 - vigésima quarta letra!' },
         { item: '🧘', nome: 'Y', descricao: 'Y de YOGA 🧘 - vigésima quinta letra!' },
         { item: '🦓', nome: 'Z', descricao: 'Z de ZEBRA 🦓 - última letra do alfabeto!' }
     ],
@@ -179,102 +179,148 @@ const conteudo = {
     ],
     silabas: [
         // Família do B
-        { item: '🍬', nome: 'BA', descricao: 'BA como em BALA 🍬' },
-        { item: '👶', nome: 'BE', descricao: 'BE como em BEBÊ 👶' },
-        { item: '🚲', nome: 'BI', descricao: 'BI como em BICICLETA 🚲' },
-        { item: '⚽', nome: 'BO', descricao: 'BO como em BOLA ⚽' },
-        { item: '🪣', nome: 'BU', descricao: 'BU como em BULE 🪣' },
+        { item: '🍌', nome: 'BA', descricao: 'BA como em BANANA 🍌 - Exemplos: BANANA, BALA, BACIA, BARATA, BATATA' },
+        { item: '👶', nome: 'BE', descricao: 'BE como em BEBÊ 👶 - Exemplos: BEBÊ, BEIJO, BELA, BECO, BERÇO' },
+        { item: '🚲', nome: 'BI', descricao: 'BI como em BICICLETA 🚲 - Exemplos: BICICLETA, BICO, BIBLIOTECA, BIGODE, BISCOITO' },
+        { item: '⚽', nome: 'BO', descricao: 'BO como em BOLA ⚽ - Exemplos: BOLA, BOCA, BONECA, BOLO, BORBOLETA' },
+        { item: '🌻', nome: 'BU', descricao: 'BU como em BUQUÊ 🌻 - Exemplos: BUQUÊ, BURACO, BUZINA, BUCHADA, BUTIQUE' },
         
         // Família do C
-        { item: '🏠', nome: 'CA', descricao: 'CA como em CASA 🏠' },
-        { item: '🧅', nome: 'CE', descricao: 'CE como em CEBOLA 🧅' },
-        { item: '🎬', nome: 'CI', descricao: 'CI como em CINEMA 🎬' },
-        { item: '🐰', nome: 'CO', descricao: 'CO como em COELHO 🐰' },
-        { item: '🌈', nome: 'CU', descricao: 'CU como em CÉU 🌈' },
+        { item: '🏠', nome: 'CA', descricao: 'CA como em CASA 🏠 - Exemplos: CASA, CARRO, CACHORRO, CAMELO, CADEIRA' },
+        { item: '🥕', nome: 'CE', descricao: 'CE como em CENOURA 🥕 - Exemplos: CENOURA, CERCA, CEREBRO, CERTEZA, CENTRO' },
+        { item: '🎪', nome: 'CI', descricao: 'CI como em CIRCO 🎪 - Exemplos: CIRCO, CIDADE, CINEMA, CINCO, CINTO' },
+        { item: '🐰', nome: 'CO', descricao: 'CO como em COELHO 🐰 - Exemplos: COELHO, CORAÇÃO, COBRA, COPO, COMIDA' },
+        { item: '🧊', nome: 'CU', descricao: 'CU como em CUBO 🧊 - Exemplos: CUBO, CURVA, CUIDADO, CULTURA, CURSO' },
         
         // Família do D
-        { item: '📅', nome: 'DA', descricao: 'DA como em DATA 📅' },
-        { item: '🦷', nome: 'DE', descricao: 'DE como em DENTE 🦷' },
-        { item: '💰', nome: 'DI', descricao: 'DI como em DINHEIRO 💰' },
-        { item: '🍬', nome: 'DO', descricao: 'DO como em DOCE 🍬' },
-        { item: '💤', nome: 'DU', descricao: 'DU como em DORMIR 💤' },
+        { item: '🎲', nome: 'DA', descricao: 'DA como em DADO 🎲 - Exemplos: DANÇA, DADO, DAMA, DATA, DANILO' },
+        { item: '👆', nome: 'DE', descricao: 'DE como em DEDO 👆 - Exemplos: DEDO, DESENHO, DENTISTA, DESEJO, DEPRESSA' },
+        { item: '💰', nome: 'DI', descricao: 'DI como em DINHEIRO 💰 - Exemplos: DINHEIRO, DIREITA, DIFERENTE, DIFÍCIL, DICIONÁRIO' },
+        { item: '🍬', nome: 'DO', descricao: 'DO como em DOCE 🍬 - Exemplos: DOCE, DOUTOR, DOMINGO, DONINHA, DORMINDO' },
+        { item: '🦆', nome: 'DU', descricao: 'DU como em PATO 🦆 - Exemplos: DUENDE, DURANTE, DUPLA, DUREZA, DURAÇÃO' },
         
         // Família do F
-        { item: '🎉', nome: 'FE', descricao: 'FE como em FESTA 🎉' },
-        { item: '👪', nome: 'FA', descricao: 'FA como em FAMÍLIA 👪' },
-        { item: '🎀', nome: 'FI', descricao: 'FI como em FITA 🎀' },
-        { item: '🌸', nome: 'FO', descricao: 'FO como em FLOR 🌸' },
-        { item: '⚽', nome: 'FU', descricao: 'FU como em FUTEBOL ⚽' },
+        { item: '👨‍👩‍👧‍👦', nome: 'FA', descricao: 'FA como em FAMÍLIA 👨‍👩‍👧‍👦 - Exemplos: FAMÍLIA, FACA, FANTASIA, FARINHA, FARMÁCIA' },
+        { item: '🎉', nome: 'FE', descricao: 'FE como em FESTA 🎉 - Exemplos: FESTA, FERRO, FELIZ, FEIJÃO, FERRAMENTA' },
+        { item: '🎀', nome: 'FI', descricao: 'FI como em FITA 🎀 - Exemplos: FITA, FIGO, FILHO, FIGURA, FILTRO' },
+        { item: '🔥', nome: 'FO', descricao: 'FO como em FOGO 🔥 - Exemplos: FOGO, FOLHA, FORMIGA, FORTE, FOTOGRAFIA' },
+        { item: '⚽', nome: 'FU', descricao: 'FU como em FUTEBOL ⚽ - Exemplos: FUTEBOL, FURIOSO, FUMAÇA, FUTURO, FUZIL' },
         
         // Família do G
-        { item: '🐱', nome: 'GA', descricao: 'GA como em GATO 🐱' },
-        { item: '🍧', nome: 'GE', descricao: 'GE como em GELADO 🍧' },
-        { item: '🦒', nome: 'GI', descricao: 'GI como em GIRAFA 🦒' },
-        { item: '🥅', nome: 'GO', descricao: 'GO como em GOL 🥅' },
-        { item: '😋', nome: 'GU', descricao: 'GU como em GOSTOSO 😋' },
+        { item: '🐔', nome: 'GA', descricao: 'GA como em GALINHA 🐔 - Exemplos: GALINHA, GATO, GARRAFA, GARFO, GASOLINA' },
+        { item: '🧊', nome: 'GE', descricao: 'GE como em GELO 🧊 - Exemplos: GELO, GENTE, GENERAL, GEOGRAFIA, GEOMETRIA' },
+        { item: '🦒', nome: 'GI', descricao: 'GI como em GIRAFA 🦒 - Exemplos: GIRAFA, GIGANTE, GINÁSTICA, GIRA, GINCANA' },
+        { item: '💧', nome: 'GO', descricao: 'GO como em GOTA 💧 - Exemplos: GOTA, GORRO, GOSTAR, GOVERNO, GORDURA' },
+        { item: '☂️', nome: 'GU', descricao: 'GU como em GUARDA-CHUVA ☂️ - Exemplos: GUARDA-CHUVA, GUERRA, GUITARRA, GUIA, GULOSO' },
+        
+        // Família do H
+        { item: '🎵', nome: 'HA', descricao: 'HA como em HARPA 🎵 - Exemplos: HARPA, HARMONIA, HASTE, HABITAÇÃO, HÁBITO' },
+        { item: '🍃', nome: 'HE', descricao: 'HE como em HERA 🍃 - Exemplos: HERÓI, HERANÇA, HELICÓPTERO, HEMISFÉRIO, HEMATOMA' },
+        { item: '🎭', nome: 'HI', descricao: 'HI como em HISTÓRIA 🎭 - Exemplos: HISTÓRIA, HIDROGÊNIO, HIPOPÓTAMO, HIENA, HIGIENE' },
+        { item: '⏰', nome: 'HO', descricao: 'HO como em HORA ⏰ - Exemplos: HORA, HOJE, HOMEM, HORIZONTE, HOSPITAL' },
+        { item: '👨', nome: 'HU', descricao: 'HU como em HUGO 👨 - Exemplos: HUMOR, HUMANO, HUMILDE, HÚMUS, HÚNGARO' },
         
         // Família do J
-        { item: '🌻', nome: 'JA', descricao: 'JA como em JARDIM 🌻' },
-        { item: '👋', nome: 'JE', descricao: 'JE como em JEITO 👋' },
-        { item: '🦒', nome: 'JI', descricao: 'JI como em GIRAFA 🦒' },
-        { item: '🐞', nome: 'JO', descricao: 'JO como em JOANINHA 🐞' },
-        { item: '🤴', nome: 'JU', descricao: 'JU como em JUCA 🤴' },
+        { item: '🐊', nome: 'JA', descricao: 'JA como em JACARÉ 🐊 - Exemplos: JACARÉ, JANELA, JARDIM, JARRA, JAMAIS' },
+        { item: '🚙', nome: 'JE', descricao: 'JE como em JEEP 🚙 - Exemplos: JEEP, JEANS, JEITO, JEJUM, JESUS' },
+        { item: '🚗', nome: 'JI', descricao: 'JI como em JIPE 🚗 - Exemplos: JIPE, JIRAFA, JINGLE, JILÓ, JIQUIÁ' },
+        { item: '🎮', nome: 'JO', descricao: 'JO como em JOGO 🎮 - Exemplos: JOGO, JORNAL, JOELHO, JOVEM, JÓIA' },
+        { item: '👨‍⚖️', nome: 'JU', descricao: 'JU como em JUIZ 👨‍⚖️ - Exemplos: JUIZ, JUNHO, JUNTO, JUSTIÇA, JUVENTUDE' },
+        
+        // Família do K
+        { item: '🥋', nome: 'KA', descricao: 'KA como em KARATÊ 🥋 - Exemplos: KARATÊ, KARAOKÊ, KARMA, KAMIKAZE, KANGURU' },
+        { item: '🍅', nome: 'KE', descricao: 'KE como em KETCHUP 🍅 - Exemplos: KETCHUP, KERMES, KERALA, KERMIT, KELVIN' },
+        { item: '🥝', nome: 'KI', descricao: 'KI como em KIWI 🥝 - Exemplos: KIWI, KILOGRAMA, KIMONO, KITKAT, KINDLE' },
+        { item: '🐨', nome: 'KO', descricao: 'KO como em KOALA 🐨 - Exemplos: KOALA, KOSOVO, KODAK, KOREA, KOBE' },
+        { item: '🏆', nome: 'KU', descricao: 'KU como em KUNG FU 🏆 - Exemplos: KUNG FU, KURDO, KUWAIT, KUBRICK, KUTCHER' },
         
         // Família do L
-        { item: '🥫', nome: 'LA', descricao: 'LA como em LATA 🥫' },
-        { item: '📖', nome: 'LE', descricao: 'LE como em LER 📖' },
-        { item: '🍋', nome: 'LI', descricao: 'LI como em LIMÃO 🍋' },
-        { item: '🐺', nome: 'LO', descricao: 'LO como em LOBO 🐺' },
-        { item: '💡', nome: 'LU', descricao: 'LU como em LUZ 💡' },
+        { item: '🌊', nome: 'LA', descricao: 'LA como em LAGO 🌊 - Exemplos: LAGO, LARANJA, LÁPIS, LAVADORA, LATA' },
+        { item: '🦁', nome: 'LE', descricao: 'LE como em LEÃO 🦁 - Exemplos: LEÃO, LETRA, LENDA, LEGUME, LEITURA' },
+        { item: '📖', nome: 'LI', descricao: 'LI como em LIVRO 📖 - Exemplos: LIVRO, LIMA, LINHA, LIMÃO, LIBERDADE' },
+        { item: '🐺', nome: 'LO', descricao: 'LO como em LOBO 🐺 - Exemplos: LOBO, LOJA, LONGE, LOUSA, LOCOMOTIVA' },
+        { item: '🌙', nome: 'LU', descricao: 'LU como em LUA 🌙 - Exemplos: LUA, LUGAR, LUPA, LUXO, LÚDICO' },
         
         // Família do M
-        { item: '🍎', nome: 'MA', descricao: 'MA como em MAÇÃ 🍎' },
-        { item: '🍯', nome: 'ME', descricao: 'ME como em MEL 🍯' },
-        { item: '🐭', nome: 'MI', descricao: 'MI como em RATO 🐭' },
-        { item: '🐒', nome: 'MO', descricao: 'MO como em MACACO 🐒' },
-        { item: '🎵', nome: 'MU', descricao: 'MU como em MÚSICA 🎵' },
+        { item: '👩', nome: 'MA', descricao: 'MA como em MAMÃE 👩 - Exemplos: MAMÃE, MAÇÃ, MALA, MAPA, MASSA' },
+        { item: '🍯', nome: 'ME', descricao: 'ME como em MEL 🍯 - Exemplos: MEL, MESA, MÉDICO, MERGULHO, MEMÓRIA' },
+        { item: '🐱', nome: 'MI', descricao: 'MI como em MIAU 🐱 - Exemplos: MIAU, MILHO, MINUTO, MINGAU, MINHOCA' },
+        { item: '🍓', nome: 'MO', descricao: 'MO como em MORANGO 🍓 - Exemplos: MORANGO, MOCHILA, MODELO, MOEDA, MONTANHA' },
+        { item: '🎵', nome: 'MU', descricao: 'MU como em MÚSICA 🎵 - Exemplos: MÚSICA, MURO, MUITO, MUNDO, MUSEU' },
         
         // Família do N
-        { item: '👃', nome: 'NA', descricao: 'NA como em NARIZ 👃' },
-        { item: '☁️', nome: 'NE', descricao: 'NE como em NUVEM ☁️' },
-        { item: '🪹', nome: 'NI', descricao: 'NI como em NINHO 🪹' },
-        { item: '🌃', nome: 'NO', descricao: 'NO como em NOITE 🌃' },
-        { item: '🥜', nome: 'NU', descricao: 'NU como em NOZ 🥜' },
+        { item: '🏊', nome: 'NA', descricao: 'NA como em NATAÇÃO 🏊 - Exemplos: NATAÇÃO, NARIZ, NASCIMENTO, NATUREZA, NAVEGAÇÃO' },
+        { item: '☁️', nome: 'NE', descricao: 'NE como em NEVOEIRO ☁️ - Exemplos: NEVOEIRO, NERVOSO, NECESSÁRIO, NEGÓCIO, NEUTRO' },
+        { item: '🪺', nome: 'NI', descricao: 'NI como em NINHO 🪺 - Exemplos: NINHO, NÍVEL, NICKNAME, NIGÉRIA, NITIDEZ' },
+        { item: '🌃', nome: 'NO', descricao: 'NO como em NOITE 🌃 - Exemplos: NOITE, NOME, NORTE, NOVELA, NÚMERO' },
+        { item: '☁️', nome: 'NU', descricao: 'NU como em NUVEM ☁️ - Exemplos: NUVEM, NÚCLEO, NÚMERO, NUTRIÇÃO, NUCA' },
         
         // Família do P
-        { item: '👨', nome: 'PA', descricao: 'PA como em PAPAI 👨' },
-        { item: '👣', nome: 'PE', descricao: 'PE como em PÉ 👣' },
-        { item: '🐧', nome: 'PI', descricao: 'PI como em PINGUIM 🐧' },
-        { item: '🎯', nome: 'PO', descricao: 'PO como em PONTO 🎯' },
-        { item: '🪜', nome: 'PU', descricao: 'PU como em PULAR 🪜' },
+        { item: '👨', nome: 'PA', descricao: 'PA como em PAPAI 👨 - Exemplos: PAPAI, PALHAÇO, PATO, PAREDE, PAPEL' },
+        { item: '🦶', nome: 'PE', descricao: 'PE como em PÉ 🦶 - Exemplos: PÉ, PEIXE, PESSOA, PEQUENO, PERGUNTAR' },
+        { item: '🐧', nome: 'PI', descricao: 'PI como em PINGUIM 🐧 - Exemplos: PINGUIM, PIPOCA, PIANO, PINTURA, PILHA' },
+        { item: '🐷', nome: 'PO', descricao: 'PO como em PORCO 🐷 - Exemplos: PORCO, PORTA, POLVO, POMAR, POLÍTICA' },
+        { item: '🦘', nome: 'PU', descricao: 'PU como em PULAR 🦘 - Exemplos: PULAR, PULMÃO, PUXAR, PÚBLICO, PUREZA' },
+        
+        // Família do Q
+        { item: '🖼️', nome: 'QUA', descricao: 'QUA como em QUADRO 🖼️ - Exemplos: QUADRO, QUANDO, QUANTIDADE, QUARTO, QUALIDADE' },
+        { item: '🧀', nome: 'QUE', descricao: 'QUE como em QUEIJO 🧀 - Exemplos: QUEIJO, QUENTE, QUEBRAR, QUERIDO, QUESTÃO' },
+        { item: '🍳', nome: 'QUI', descricao: 'QUI como em QUINDIM 🍳 - Exemplos: QUINDIM, QUINTAL, QUÍMICA, QUILO, QUIROPRAXIA' },
+        { item: '📊', nome: 'QUO', descricao: 'QUO como em QUOTA 📊 - Exemplos: QUOTA, QUOTIDIANO, QUORUM, QUOTIENTE, QUOCIENTE' },
         
         // Família do R
-        { item: '👑', nome: 'RA', descricao: 'RA como em RAINHA 👑' },
-        { item: '👑', nome: 'RE', descricao: 'RE como em REI 👑' },
-        { item: '😂', nome: 'RI', descricao: 'RI como em RIR 😂' },
-        { item: '🌹', nome: 'RO', descricao: 'RO como em ROSA 🌹' },
-        { item: '📏', nome: 'RU', descricao: 'RU como em RÉGUA 📏' },
+        { item: '👸', nome: 'RA', descricao: 'RA como em RAINHA 👸 - Exemplos: RAINHA, RATO, RÁPIDO, RAPOSA, RABANETE' },
+        { item: '⏰', nome: 'RE', descricao: 'RE como em RELÓGIO ⏰ - Exemplos: RELÓGIO, REDE, REGRA, RECEITA, RESTAURANTE' },
+        { item: '😂', nome: 'RI', descricao: 'RI como em RISO 😂 - Exemplos: RISO, RIO, RICO, RITMO, RINOCERONTE' },
+        { item: '🌹', nome: 'RO', descricao: 'RO como em ROSA 🌹 - Exemplos: ROSA, ROUPA, RODA, ROBÔ, ROMANCE' },
+        { item: '🛣️', nome: 'RU', descricao: 'RU como em RUA 🛣️ - Exemplos: RUA, RUÍDO, RUGBY, RUSSO, RURAL' },
         
         // Família do S
-        { item: '🐸', nome: 'SA', descricao: 'SA como em SAPO 🐸' },
-        { item: '🐍', nome: 'SE', descricao: 'SE como em SERPENTE 🐍' },
-        { item: '🤫', nome: 'SI', descricao: 'SI como em SILÊNCIO 🤫' },
-        { item: '☀️', nome: 'SO', descricao: 'SO como em SOL ☀️' },
-        { item: '🧃', nome: 'SU', descricao: 'SU como em SUCO 🧃' },
+        { item: '🐸', nome: 'SA', descricao: 'SA como em SAPO 🐸 - Exemplos: SAPO, SAPATO, SALA, SABER, SANGUE' },
+        { item: '🌱', nome: 'SE', descricao: 'SE como em SEMENTE 🌱 - Exemplos: SEMENTE, SEGUNDO, SEGREDO, SETEMBRO, SEREIA' },
+        { item: '🤫', nome: 'SI', descricao: 'SI como em SILÊNCIO 🤫 - Exemplos: SILÊNCIO, SIMPLES, SINO, SISTEMA, SÍMBOLO' },
+        { item: '☀️', nome: 'SO', descricao: 'SO como em SOL ☀️ - Exemplos: SOL, SORRISO, SOFÁ, SOLDADO, SONHO' },
+        { item: '🧃', nome: 'SU', descricao: 'SU como em SUCO 🧃 - Exemplos: SUCO, SUJO, SURPRESA, SUCESSO, SUAVIDADE' },
         
         // Família do T
-        { item: '🐢', nome: 'TA', descricao: 'TA como em TARTARUGA 🐢' },
-        { item: '🫖', nome: 'TE', descricao: 'TE como em CHÁ 🫖' },
-        { item: '⏰', nome: 'TI', descricao: 'TI como em TEMPO ⏰' },
-        { item: '🍅', nome: 'TO', descricao: 'TO como em TOMATE 🍅' },
-        { item: '🌷', nome: 'TU', descricao: 'TU como em TULIPA 🌷' },
+        { item: '🏆', nome: 'TA', descricao: 'TA como em TAÇA 🏆 - Exemplos: TAÇA, TARTARUGA, TATU, TALVEZ, TARTARO' },
+        { item: '📺', nome: 'TE', descricao: 'TE como em TELEVISÃO 📺 - Exemplos: TELEVISÃO, TELA, TERRA, TEMPO, TELEFONE' },
+        { item: '🐅', nome: 'TI', descricao: 'TI como em TIGRE 🐅 - Exemplos: TIGRE, TIPO, TIJOLO, TÍTULO, TINTA' },
+        { item: '🍅', nome: 'TO', descricao: 'TO como em TOMATE 🍅 - Exemplos: TOMATE, TORRE, TOURO, TOTAL, TORNADO' },
+        { item: '🦈', nome: 'TU', descricao: 'TU como em TUBARÃO 🦈 - Exemplos: TUBARÃO, TUDO, TULIPA, TURBINA, TURMA' },
         
         // Família do V
-        { item: '🐄', nome: 'VA', descricao: 'VA como em VACA 🐄' },
-        { item: '👵', nome: 'VE', descricao: 'VE como em VOVÓ 👵' },
-        { item: '👀', nome: 'VI', descricao: 'VI como em VER 👀' },
-        { item: '🏐', nome: 'VO', descricao: 'VO como em VÔLEI 🏐' },
-        { item: '✈️', nome: 'VU', descricao: 'VU como em VOAR ✈️' }
+        { item: '🐄', nome: 'VA', descricao: 'VA como em VACA 🐄 - Exemplos: VACA, VASO, VARINHA, VAPOR, VALOR' },
+        { item: '🕯️', nome: 'VE', descricao: 'VE como em VELA 🕯️ - Exemplos: VELA, VERDE, VERDADE, VEADO, VELOCIDADE' },
+        { item: '🍇', nome: 'VI', descricao: 'VI como em VIDA 🍇 - Exemplos: VIDA, VIAGEM, VIDRO, VIOLÃO, VINTE' },
+        { item: '✈️', nome: 'VO', descricao: 'VO como em VOAR ✈️ - Exemplos: VOAR, VOZ, VOVÔ, VOLUME, VOLANTE' },
+        { item: '🌋', nome: 'VU', descricao: 'VU como em VULCÃO 🌋 - Exemplos: VULCÃO, VULNERÁVEL, VULGAR, VULTO, VULCANOLOGIA' },
+        
+        // Família do W
+        { item: '🧸', nome: 'WA', descricao: 'WA como em WASHINGTON 🧸 - Exemplos: WASHINGTON, WAFFLE, WALKMAN, WALMART, WALLACE' },
+        { item: '🌐', nome: 'WE', descricao: 'WE como em WEB 🌐 - Exemplos: WEBSITE, WESTERN, WEEKEND, WELCOME, WELLINGTON' },
+        { item: '📱', nome: 'WI', descricao: 'WI como em WIFI 📱 - Exemplos: WIFI, WINDOWS, WILMINGTON, WISCONSIN, WILLIAM' },
+        { item: '🌍', nome: 'WO', descricao: 'WO como em WORLD 🌍 - Exemplos: WORKSHOP, WORLD, WOMAN, WONDERFUL, WORKOUT' },
+        
+        // Família do X
+        { item: '☕', nome: 'XA', descricao: 'XA como em XAROPE ☕ - Exemplos: XAROPE, XAMPU, XALE, XAXIM, XAMÃ' },
+        { item: '🤠', nome: 'XE', descricao: 'XE como em XERIFE 🤠 - Exemplos: XERIFE, XEROX, XEQUE, XENOFOBIA, XERETA' },
+        { item: '☕', nome: 'XI', descricao: 'XI como em XÍCARA ☕ - Exemplos: XÍCARA, XINGAR, XINXIM, XILOGRAVURA, XIITA' },
+        { item: '🍫', nome: 'XO', descricao: 'XO como em CHOCOLATE 🍫 - Exemplos: XODÓ, XONGAS, XOQUE, XOXOTA, XOTE' },
+        { item: '🥬', nome: 'XU', descricao: 'XU como em XUXA 🥬 - Exemplos: XUXA, XUXU, XUCRUTE, XUCRO, XUPA' },
+        
+        // Família do Y
+        { item: '🧘', nome: 'YA', descricao: 'YA como em YOGA 🧘 - Exemplos: YACHT, YAHOO, YAKULT, YAMAHA, YANDEX' },
+        { item: '🧊', nome: 'YE', descricao: 'YE como em YETI 🧊 - Exemplos: YELLOW, YESTERDAY, YEMEN, YELTSIN, YEAST' },
+        { item: '☯️', nome: 'YI', descricao: 'YI como em YIN ☯️ - Exemplos: YINYANG, YIDDISH, YITZHAK, YIDDISH, YIPS' },
+        { item: '🧘', nome: 'YO', descricao: 'YO como em YOGA 🧘 - Exemplos: YOGA, YOUTUBE, YOUNG, YOUR, YOGURT' },
+        
+        // Família do Z
+        { item: '🦓', nome: 'ZA', descricao: 'ZA como em ZEBRA 🦓 - Exemplos: ZANGADO, ZARABATANA, ZARPAR, ZAGUEIRO, ZANGAR' },
+        { item: '🦓', nome: 'ZE', descricao: 'ZE como em ZEBRA 🦓 - Exemplos: ZEBRA, ZEPPELIN, ZELO, ZEPELIM, ZENITE' },
+        { item: '🤐', nome: 'ZI', descricao: 'ZI como em ZIPER 🤐 - Exemplos: ZIPER, ZINCO, ZIGUEZAGUE, ZINCO, ZIPADO' },
+        { item: '🦓', nome: 'ZO', descricao: 'ZO como em ZOOLÓGICO 🦓 - Exemplos: ZOOLÓGICO, ZONA, ZODÍACO, ZOOM, ZOMBARIA' },
+        { item: '🐝', nome: 'ZU', descricao: 'ZU como em ZUMBIDO 🐝 - Exemplos: ZUMBIDO, ZUNIR, ZURETA, ZURRAR, ZUAVO' }
     ],
     numeros: [
         { item: '1️⃣', nome: 'UM', descricao: 'Número 1 - Um patinho 🦆' },
@@ -307,6 +353,340 @@ const conteudo = {
         { item: '🎮', nome: 'VAMOS BRINCAR', descricao: 'Convite para brincar 🎮' }
     ],
     jogos: jogosFuncionais
+};
+
+const silabasData = {
+    'BA': {
+        silaba: 'BA',
+        emoji: '🍌',
+        exemplos: ['BANANA', 'BALA', 'BACIA', 'BARATA', 'BATATA']
+    },
+    'BE': {
+        silaba: 'BE',
+        emoji: '👶',
+        exemplos: ['BEBÊ', 'BEIJO', 'BELA', 'BECO', 'BERÇO']
+    },
+    'BI': {
+        silaba: 'BI',
+        emoji: '🚲',
+        exemplos: ['BICICLETA', 'BICO', 'BIBLIOTECA', 'BIGODE', 'BISCOITO']
+    },
+    'BO': {
+        silaba: 'BO',
+        emoji: '⚽',
+        exemplos: ['BOLA', 'BOCA', 'BONECA', 'BOLO', 'BORBOLETA']
+    },
+    'BU': {
+        silaba: 'BU',
+        emoji: '🌻',
+        exemplos: ['BUQUÊ', 'BURACO', 'BUZINA', 'BUCHADA', 'BUTIQUE']
+    },
+    'CA': {
+        silaba: 'CA',
+        emoji: '🏠',
+        exemplos: ['CASA', 'CARRO', 'CACHORRO', 'CAMELO', 'CADEIRA']
+    },
+    'CE': {
+        silaba: 'CE',
+        emoji: '🥕',
+        exemplos: ['CENOURA', 'CERCA', 'CEREBRO', 'CERTEZA', 'CENTRO']
+    },
+    'GE': {
+        silaba: 'GE',
+        emoji: '🧊',
+        exemplos: ['GELO', 'GENTE', 'GENERAL', 'GEOGRAFIA', 'GEOMETRIA']
+    },
+    'GI': {
+        silaba: 'GI',
+        emoji: '🦒',
+        exemplos: ['GIRAFA', 'GIGANTE', 'GINÁSTICA', 'GIRA', 'GINCANA']
+    },
+    'GO': {
+        silaba: 'GO',
+        emoji: '💧',
+        exemplos: ['GOTA', 'GORRO', 'GOSTAR', 'GOVERNO', 'GORDURA']
+    },
+    'GU': {
+        silaba: 'GU',
+        emoji: '☂️',
+        exemplos: ['GUARDA-CHUVA', 'GUERRA', 'GUITARRA', 'GUIA', 'GULOSO']
+    },
+    'JA': {
+        silaba: 'JA',
+        emoji: '🐊',
+        exemplos: ['JACARÉ', 'JANELA', 'JARDIM', 'JARRA', 'JAMAIS']
+    },
+    'JE': {
+        silaba: 'JE',
+        emoji: '🚙',
+        exemplos: ['JEEP', 'JEANS', 'JEITO', 'JEJUM', 'JESUS']
+    },
+    'JI': {
+        silaba: 'JI',
+        emoji: '🦒',
+        exemplos: ['JIPE', 'JIRAFA', 'JINGLE', 'JILÓ', 'JIQUIÁ']
+    },
+    'JO': {
+        silaba: 'JO',
+        emoji: '🎮',
+        exemplos: ['JOGO', 'JORNAL', 'JOELHO', 'JOVEM', 'JÓIA']
+    },
+    'JU': {
+        silaba: 'JU',
+        emoji: '👨‍⚖️',
+        exemplos: ['JUIZ', 'JUNHO', 'JUNTO', 'JUSTIÇA', 'JUVENTUDE']
+    },
+    'KA': {
+        silaba: 'KA',
+        emoji: '🥋',
+        exemplos: ['KARATÊ', 'KARAOKÊ', 'KARMA', 'KAMIKAZE', 'KANGURU']
+    },
+    'KE': {
+        silaba: 'KE',
+        emoji: '🍅',
+        exemplos: ['KETCHUP', 'KERMES', 'KERALA', 'KERMIT', 'KELVIN']
+    },
+    'KI': {
+        silaba: 'KI',
+        emoji: '🥝',
+        exemplos: ['KIWI', 'KILOGRAMA', 'KIMONO', 'KITKAT', 'KINDLE']
+    },
+    'KO': {
+        silaba: 'KO',
+        emoji: '🐨',
+        exemplos: ['KOALA', 'KOSOVO', 'KODAK', 'KOREA', 'KOBE']
+    },
+    'KU': {
+        silaba: 'KU',
+        emoji: '🏆',
+        exemplos: ['KUNG FU', 'KURDO', 'KUWAIT', 'KUBRICK', 'KUTCHER']
+    },
+    'LA': {
+        silaba: 'LA',
+        emoji: '🌊',
+        exemplos: ['LAGO', 'LARANJA', 'LÁPIS', 'LAVADORA', 'LATA']
+    },
+    'LE': {
+        silaba: 'LE',
+        emoji: '🦁',
+        exemplos: ['LEÃO', 'LETRA', 'LENDA', 'LEGUME', 'LEITURA']
+    },
+    'LI': {
+        silaba: 'LI',
+        emoji: '📖',
+        exemplos: ['LIVRO', 'LIMA', 'LINHA', 'LIMÃO', 'LIBERDADE']
+    },
+    'LO': {
+        silaba: 'LO',
+        emoji: '🐺',
+        exemplos: ['LOBO', 'LOJA', 'LONGE', 'LOUSA', 'LOCOMOTIVA']
+    },
+    'LU': {
+        silaba: 'LU',
+        emoji: '🌙',
+        exemplos: ['LUA', 'LUGAR', 'LUPA', 'LUXO', 'LÚDICO']
+    },
+    'MA': {
+        silaba: 'MA',
+        emoji: '👩',
+        exemplos: ['MAMÃE', 'MAÇÃ', 'MALA', 'MAPA', 'MASSA']
+    },
+    'ME': {
+        silaba: 'ME',
+        emoji: '🍯',
+        exemplos: ['MEL', 'MESA', 'MÉDICO', 'MERGULHO', 'MEMÓRIA']
+    },
+    'MI': {
+        silaba: 'MI',
+        emoji: '🐱',
+        exemplos: ['MIAU', 'MILHO', 'MINUTO', 'MINGAU', 'MINHOCA']
+    },
+    'MO': {
+        silaba: 'MO',
+        emoji: '🦋',
+        exemplos: ['MORANGO', 'MOCHILA', 'MODELO', 'MOEDA', 'MONTANHA']
+    },
+    'MU': {
+        silaba: 'MU',
+        emoji: '🎵',
+        exemplos: ['MÚSICA', 'MURO', 'MUITO', 'MUNDO', 'MUSEU']
+    },
+    'NA': {
+        silaba: 'NA',
+        emoji: '🏊',
+        exemplos: ['NATAÇÃO', 'NARIZ', 'NASCIMENTO', 'NATUREZA', 'NAVEGAÇÃO']
+    },
+    'NE': {
+        silaba: 'NE',
+        emoji: '☁️',
+        exemplos: ['NEVOEIRO', 'NERVOSO', 'NECESSÁRIO', 'NEGÓCIO', 'NEUTRO']
+    },
+    'NI': {
+        silaba: 'NI',
+        emoji: '🥜',
+        exemplos: ['NINHO', 'NÍVEL', 'NICKNAME', 'NIGÉRIA', 'NITIDEZ']
+    },
+    'NO': {
+        silaba: 'NO',
+        emoji: '🌃',
+        exemplos: ['NOITE', 'NOME', 'NORTE', 'NOVELA', 'NÚMERO']
+    },
+    'NU': {
+        silaba: 'NU',
+        emoji: '☁️',
+        exemplos: ['NUVEM', 'NÚCLEO', 'NÚMERO', 'NUTRIÇÃO', 'NUCA']
+    },
+    'PA': {
+        silaba: 'PA',
+        emoji: '👨',
+        exemplos: ['PAPAI', 'PALHAÇO', 'PATO', 'PAREDE', 'PAPEL']
+    },
+    'PE': {
+        silaba: 'PE',
+        emoji: '🦶',
+        exemplos: ['PÉ', 'PEIXE', 'PESSOA', 'PEQUENO', 'PERGUNTAR']
+    },
+    'PI': {
+        silaba: 'PI',
+        emoji: '🐧',
+        exemplos: ['PINGUIM', 'PIPOCA', 'PIANO', 'PINTURA', 'PILHA']
+    },
+    'PO': {
+        silaba: 'PO',
+        emoji: '🐷',
+        exemplos: ['PORCO', 'PORTA', 'POLVO', 'POMAR', 'POLÍTICA']
+    },
+    'PU': {
+        silaba: 'PU',
+        emoji: '🦘',
+        exemplos: ['PULAR', 'PULMÃO', 'PUXAR', 'PÚBLICO', 'PUREZA']
+    },
+    'QUA': {
+        silaba: 'QUA',
+        emoji: '🖼️',
+        exemplos: ['QUADRO', 'QUANDO', 'QUANTIDADE', 'QUARTO', 'QUALIDADE']
+    },
+    'QUE': {
+        silaba: 'QUE',
+        emoji: '🧀',
+        exemplos: ['QUEIJO', 'QUENTE', 'QUEBRAR', 'QUERIDO', 'QUESTÃO']
+    },
+    'QUI': {
+        silaba: 'QUI',
+        emoji: '🍳',
+        exemplos: ['QUINDIM', 'QUINTAL', 'QUÍMICA', 'QUILO', 'QUIROPRAXIA']
+    },
+    'QUO': {
+        silaba: 'QUO',
+        emoji: '📊',
+        exemplos: ['QUOTA', 'QUOTIDIANO', 'QUORUM', 'QUOTIENTE', 'QUOCIENTE']
+    },
+    'RA': {
+        silaba: 'RA',
+        emoji: '👸',
+        exemplos: ['RAINHA', 'RATO', 'RÁPIDO', 'RAPOSA', 'RABANETE']
+    },
+    'RE': {
+        silaba: 'RE',
+        emoji: '⏰',
+        exemplos: ['RELÓGIO', 'REDE', 'REGRA', 'RECEITA', 'RESTAURANTE']
+    },
+    'RI': {
+        silaba: 'RI',
+        emoji: '😂',
+        exemplos: ['RISO', 'RIO', 'RICO', 'RITMO', 'RINOCERONTE']
+    },
+    'RO': {
+        silaba: 'RO',
+        emoji: '🌹',
+        exemplos: ['ROSA', 'ROUPA', 'RODA', 'ROBÔ', 'ROMANCE']
+    },
+    'RU': {
+        silaba: 'RU',
+        emoji: '🛣️',
+        exemplos: ['RUA', 'RUÍDO', 'RUGBY', 'RUSSO', 'RURAL']
+    },
+    'SA': {
+        silaba: 'SA',
+        emoji: '🐸',
+        exemplos: ['SAPO', 'SAPATO', 'SALA', 'SABER', 'SANGUE']
+    },
+    'SE': {
+        silaba: 'SE',
+        emoji: '🌱',
+        exemplos: ['SEMENTE', 'SEGUNDO', 'SEGREDO', 'SETEMBRO', 'SEREIA']
+    },
+    'SI': {
+        silaba: 'SI',
+        emoji: '🤫',
+        exemplos: ['SILÊNCIO', 'SIMPLES', 'SINO', 'SISTEMA', 'SÍMBOLO']
+    },
+    'SO': {
+        silaba: 'SO',
+        emoji: '☀️',
+        exemplos: ['SOL', 'SORRISO', 'SOFÁ', 'SOLDADO', 'SONHO']
+    },
+    'SU': {
+        silaba: 'SU',
+        emoji: '💦',
+        exemplos: ['SUCO', 'SUJO', 'SURPRESA', 'SUCESSO', 'SUAVIDADE']
+    },
+    'TA': {
+        silaba: 'TA',
+        emoji: '🏆',
+        exemplos: ['TAÇA', 'TARTARUGA', 'TATU', 'TALVEZ', 'TARTARO']
+    },
+    'TE': {
+        silaba: 'TE',
+        emoji: '📺',
+        exemplos: ['TELEVISÃO', 'TELA', 'TERRA', 'TEMPO', 'TELEFONE']
+    },
+    'TI': {
+        silaba: 'TI',
+        emoji: '🐅',
+        exemplos: ['TIGRE', 'TIPO', 'TIJOLO', 'TÍTULO', 'TINTA']
+    },
+    'TO': {
+        silaba: 'TO',
+        emoji: '🍅',
+        exemplos: ['TOMATE', 'TORRE', 'TOURO', 'TOTAL', 'TORNADO']
+    },
+    'TU': {
+        silaba: 'TU',
+        emoji: '🦈',
+        exemplos: ['TUBARÃO', 'TUDO', 'TULIPA', 'TURBINA', 'TURMA']
+    },
+    'VA': {
+        silaba: 'VA',
+        emoji: '🐄',
+        exemplos: ['VACA', 'VASO', 'VARINHA', 'VAPOR', 'VALOR']
+    },
+    'VE': {
+        silaba: 'VE',
+        emoji: '🕯️',
+        exemplos: ['VELA', 'VERDE', 'VERDADE', 'VEADO', 'VELOCIDADE']
+    },
+    'VI': {
+        silaba: 'VI',
+        emoji: '🍇',
+        exemplos: ['VIDA', 'VIAGEM', 'VIDRO', 'VIOLÃO', 'VINTE']
+    },
+    'VO': {
+        silaba: 'VO',
+        emoji: '✈️',
+        exemplos: ['VOAR', 'VOZ', 'VOVÔ', 'VOLUME', 'VOLANTE']
+    },
+    'VU': {
+        silaba: 'VU',
+        emoji: '🌋',
+        exemplos: ['VULCÃO', 'VULNERÁVEL', 'VULGAR', 'VULTO', 'VULCANOLOGIA']
+    },
+    // ... adicione o resto das sílabas se necessário
+    'ZU': {
+        silaba: 'ZU',
+        emoji: '🐝',
+        exemplos: ['ZUMBIDO', 'ZUNIR', 'ZURETA', 'ZURRAR', 'ZUAVO']
+    }
 };
 
 // Sistema de conquistas
@@ -888,6 +1268,7 @@ function inicializarEventos() {
     
     // Event listeners dos modais
     document.querySelectorAll('.close-button').forEach(btn => {
+       
         btn.addEventListener('click', (e) => {
             const modal = e.target.closest('.modal');
             if (modal) {
