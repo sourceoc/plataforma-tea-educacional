@@ -96,16 +96,6 @@ const configuracoesDefault = {
 configuracoesTEA = { ...configuracoesDefault, ...configuracoesTEA };
 let configuracoes = configuracoesTEA;
 
-// Jogos funcionais
-const jogosFuncionais = [
-    { 
-        item: '🎮', 
-        nome: 'ESCOLHER JOGO', 
-        descricao: 'Clique para ver os jogos disponíveis! 🎯🎪🎲',
-        tipo: 'menu'
-    }
-];
-
 // Dados de conteúdo educacional
 const conteudo = {
     cores: [
@@ -155,27 +145,409 @@ const conteudo = {
         { item: '🇺', nome: 'U', descricao: 'U de UVA 🍇 - quinta vogal!' }
     ],
     animais: [
+        // Animais Domésticos
         { item: '🐶', nome: 'CACHORRO', descricao: 'O melhor amigo do homem! Faz AU AU 🐕' },
         { item: '🐱', nome: 'GATO', descricao: 'Bichinho carinhoso que faz MIAU 😸' },
-        { item: '🐰', nome: 'COELHO', descricao: 'Saltitante e fofo, come cenoura 🥕' },
         { item: '🐹', nome: 'HAMSTER', descricao: 'Pequenino e corre na roda 🎡' },
+        { item: '🐰', nome: 'COELHO', descricao: 'Saltitante e fofo, come cenoura 🥕' },
         { item: '🐦', nome: 'PASSARINHO', descricao: 'Voa pelo céu e canta PIO PIO 🎵' },
-        { item: '🐢', nome: 'TARTARUGA', descricao: 'Devagar e sempre, vive muito tempo ⏰' }
+        { item: '🐠', nome: 'PEIXE', descricao: 'Nada na água e faz bolhinhas 💙' },
+        { item: '🐢', nome: 'TARTARUGA', descricao: 'Devagar e sempre, vive muito tempo ⏰' },
+        
+        // Animais da Fazenda
+        { item: '🐄', nome: 'VACA', descricao: 'Dá leite fresquinho e faz MUUU 🥛' },
+        { item: '🐷', nome: 'PORCO', descricao: 'Gosta de rolar na lama e faz OINC OINC 🎭' },
+        { item: '🐑', nome: 'OVELHA', descricao: 'Tem lã macia e faz BÉÉÉÉ 🧶' },
+        { item: '🐐', nome: 'CABRA', descricao: 'Salta nas montanhas e faz MÉÉÉÉ ⛰️' },
+        { item: '🐴', nome: 'CAVALO', descricao: 'Corre rápido e faz HIIIII 🏇' },
+        { item: '🐓', nome: 'GALO', descricao: 'Acorda cedo e faz COCORICÓ ☀️' },
+        { item: '🐔', nome: 'GALINHA', descricao: 'Bota ovos e faz CÓ CÓ CÓ 🥚' },
+        { item: '🦆', nome: 'PATO', descricao: 'Nada no lago e faz QUACK QUACK 🌊' },
+        
+        // Animais Selvagens - África
+        { item: '🦁', nome: 'LEÃO', descricao: 'Rei da selva, forte e corajoso! ROAAAAR 👑' },
+        { item: '🐘', nome: 'ELEFANTE', descricao: 'Gigante gentil com tromba comprida 🎪' },
+        { item: '🦒', nome: 'GIRAFA', descricao: 'Pescoço bem alto, come folhas das árvores 🌳' },
+        { item: '🦏', nome: 'RINOCERONTE', descricao: 'Tem chifre no nariz e é muito forte 💪' },
+        { item: '🦓', nome: 'ZEBRA', descricao: 'Cavalo listrado de preto e branco 🖤🤍' },
+        { item: '🦛', nome: 'HIPOPÓTAMO', descricao: 'Grandão que vive na água e na terra 🌊' },
+        { item: '🐊', nome: 'CROCODILO', descricao: 'Dentes afiados, vive no rio 🦷' },
+        
+        // Animais Selvagens - Outros
+        { item: '🐅', nome: 'TIGRE', descricao: 'Felino listrado, muito ágil e forte 🏃‍♂️' },
+        { item: '🐆', nome: 'LEOPARDO', descricao: 'Manchado e muito veloz 💨' },
+        { item: '🐻', nome: 'URSO', descricao: 'Peludo e forte, gosta de mel 🍯' },
+        { item: '🐺', nome: 'LOBO', descricao: 'Uiva para a lua AUUUUU 🌙' },
+        { item: '🦊', nome: 'RAPOSA', descricao: 'Esperta e tem cauda peluda 🧠' },
+        { item: '🐨', nome: 'COALA', descricao: 'Fofinho que come eucalipto 🌿' },
+        { item: '🐼', nome: 'PANDA', descricao: 'Preto e branco, come bambu 🎋' },
+        
+        // Primatas
+        { item: '🐵', nome: 'MACACO', descricao: 'Sobe em árvores e come banana 🍌' },
+        { item: '🦍', nome: 'GORILA', descricao: 'Primata grande e forte 💪' },
+        { item: '🦧', nome: 'ORANGOTANGO', descricao: 'Tem braços compridos e é ruivo 🔴' },
+        
+        // Animais do Mar
+        { item: '🐋', nome: 'BALEIA', descricao: 'Gigante dos oceanos, esguicha água 💦' },
+        { item: '🐙', nome: 'POLVO', descricao: 'Tem oito braços e é muito inteligente 🧠' },
+        { item: '🦈', nome: 'TUBARÃO', descricao: 'Peixe grande com dentes afiados 🦷' },
+        { item: '🐬', nome: 'GOLFINHO', descricao: 'Inteligente e amigável, faz acrobacias 🤸‍♂️' },
+        { item: '🐡', nome: 'BAIACU', descricao: 'Peixe que infla como uma bola ⚽' },
+        { item: '🦀', nome: 'CARANGUEJO', descricao: 'Anda de lado e tem garras 👐' },
+        { item: '🦞', nome: 'LAGOSTA', descricao: 'Crustáceo vermelho do mar 🔴' },
+        { item: '🐚', nome: 'CONCHA', descricao: 'Casa dos moluscos no mar 🏠' },
+        { item: '⭐', nome: 'ESTRELA-DO-MAR', descricao: 'Tem cinco pontas como uma estrela ⭐' },
+        { item: '🪼', nome: 'ÁGUA-VIVA', descricao: 'Transparente e flutua no mar 👻' },
+        
+        // Aves
+        { item: '🦅', nome: 'ÁGUIA', descricao: 'Ave de rapina, voa muito alto ⛰️' },
+        { item: '🦉', nome: 'CORUJA', descricao: 'Sábia da floresta, ativa à noite 🌙' },
+        { item: '🦆', nome: 'PATO', descricao: 'Nada e voa, faz QUACK QUACK 🌊' },
+        { item: '🦢', nome: 'CISNE', descricao: 'Elegante ave branca dos lagos 🤍' },
+        { item: '🦩', nome: 'FLAMINGO', descricao: 'Rosa e fica numa perna só 🩰' },
+        { item: '🐧', nome: 'PINGUIM', descricao: 'Ave que não voa, mas nada muito bem 🏊‍♂️' },
+        { item: '🦜', nome: 'PAPAGAIO', descricao: 'Colorido e repete o que falamos 🗣️' },
+        { item: '🐔', nome: 'GALINHA', descricao: 'Bota ovos e cuida dos pintinhos 🥚' },
+        { item: '🐓', nome: 'GALO', descricao: 'Canta de manhã COCORICÓ ☀️' },
+        { item: '🦃', nome: 'PERU', descricao: 'Ave grande com cauda colorida 🌈' },
+        
+        // Répteis
+        { item: '🐍', nome: 'COBRA', descricao: 'Rasteja no chão e faz SSSSS 🤫' },
+        { item: '🦎', nome: 'LAGARTO', descricao: 'Toma sol na pedra e muda de cor 🌞' },
+        { item: '🐢', nome: 'TARTARUGA', descricao: 'Carrega a casa nas costas 🏠' },
+        { item: '🐊', nome: 'JACARÉ', descricao: 'Primo do crocodilo, vive em rios 🌊' },
+        
+        // Insetos
+        { item: '🐛', nome: 'LAGARTA', descricao: 'Vai virar borboleta linda 🦋' },
+        { item: '🦋', nome: 'BORBOLETA', descricao: 'Voa de flor em flor, muito colorida 🌺' },
+        { item: '🐝', nome: 'ABELHA', descricao: 'Faz mel delicioso e faz BZZZZ 🍯' },
+        { item: '🐞', nome: 'JOANINHA', descricao: 'Vermelhinha com pintinhas pretas ⚫' },
+        { item: '🕷️', nome: 'ARANHA', descricao: 'Tece teias e tem oito pernas 🕸️' },
+        { item: '🦗', nome: 'GRILO', descricao: 'Faz música à noite CRI CRI CRI 🎵' },
+        { item: '🐜', nome: 'FORMIGA', descricao: 'Trabalhadeira e muito forte 💪' },
+        { item: '🦟', nome: 'MOSQUITO', descricao: 'Pequenino que faz ZZZZ 🎵' },
+        
+        // Animais Australianos
+        { item: '🦘', nome: 'CANGURU', descricao: 'Pula muito alto e tem bolsa 👶' },
+        { item: '🐨', nome: 'COALA', descricao: 'Dorme muito e come eucalipto 😴' },
+        
+        // Animais do Gelo
+        { item: '🐧', nome: 'PINGUIM', descricao: 'Vive no gelo e escorrega na barriga ❄️' },
+        { item: '🦭', nome: 'FOCA', descricao: 'Nada no mar gelado e faz OU OU OU 🌊' },
+        { item: '🐻‍❄️', nome: 'URSO-POLAR', descricao: 'Branquinho do Polo Norte ❄️' },
+        
+        // Animais Fantásticos (Mitológicos)
+        { item: '🦄', nome: 'UNICÓRNIO', descricao: 'Cavalo mágico com chifre ✨' },
+        { item: '🐉', nome: 'DRAGÃO', descricao: 'Criatura lendária que cospe fogo 🔥' },
+        
+        // Dinossauros
+        { item: '🦕', nome: 'DINOSSAURO', descricao: 'Gigante que viveu há muito tempo ⏳' },
+        { item: '🦖', nome: 'T-REX', descricao: 'Rei dos dinossauros, muito feroz 👑' }
     ],
     alimentos: [
+        // Frutas Nacionais
         { item: '🍎', nome: 'MAÇÃ', descricao: 'Fruta vermelha, crocante e doce 🌟' },
         { item: '🍌', nome: 'BANANA', descricao: 'Fruta amarela, macia e nutritiva 💪' },
         { item: '🍊', nome: 'LARANJA', descricao: 'Fruta cítrica, cheia de vitamina C ☀️' },
         { item: '🍇', nome: 'UVA', descricao: 'Frutinhas roxas em cachos 🍷' },
+        { item: '🍓', nome: 'MORANGO', descricao: 'Vermelhinho e doce, com pontinhas 💕' },
+        { item: '🍑', nome: 'CEREJA', descricao: 'Pequenina e vermelha, bem docinha 🎈' },
+        { item: '🍒', nome: 'CEREJAS', descricao: 'Duas juntinhas no cabinho 👯‍♀️' },
+        { item: '🍐', nome: 'PÊRA', descricao: 'Fruta verdinha ou amarelinha, suculenta 💚' },
+        { item: '🍍', nome: 'ABACAXI', descricao: 'Fruta espinhosa por fora, doce por dentro 👑' },
+        { item: '🥝', nome: 'KIWI', descricao: 'Verdinho por fora, branquinho por dentro 🥽' },
+        { item: '🍉', nome: 'MELANCIA', descricao: 'Grande, verde e vermelha por dentro! 🍀' },
+        { item: '🍈', nome: 'MELÃO', descricao: 'Laranjinha por dentro, bem refrescante 🧡' },
+        
+        // Frutas Tropicais
+        { item: '🥭', nome: 'MANGA', descricao: 'Fruta tropical doce e suculenta 🌴' },
+        { item: '🍌', nome: 'BANANA-DA-TERRA', descricao: 'Banana grande para cozinhar 🔥' },
+        { item: '🥥', nome: 'COCO', descricao: 'Água fresquinha dentro da casca 💧' },
+        { item: '🍊', nome: 'TANGERINA', descricao: 'Laranjinha pequena e fácil de descascar �' },
+        { item: '🍋', nome: 'LIMÃO', descricao: 'Azedinho, mas muito bom na limonada 😋' },
+        { item: '🫐', nome: 'MIRTILO', descricao: 'Frutinhas azuis pequeninas e doces 💙' },
+        
+        // Legumes e Verduras
+        { item: '�🥕', nome: 'CENOURA', descricao: 'Legume laranja, bom para os olhos 👀' },
+        { item: '🥬', nome: 'ALFACE', descricao: 'Folhinha verde para salada 🥗' },
+        { item: '🥒', nome: 'PEPINO', descricao: 'Verde e refrescante na salada 💚' },
+        { item: '�', nome: 'TOMATE', descricao: 'Vermelhinho e suculento 🔴' },
+        { item: '🌽', nome: 'MILHO', descricao: 'Grãozinhos amarelos na espiga 🌞' },
+        { item: '🥔', nome: 'BATATA', descricao: 'Tubérculo gostoso, vira purê! 🥄' },
+        { item: '🧄', nome: 'ALHO', descricao: 'Tempero forte e cheiroso 👃' },
+        { item: '🧅', nome: 'CEBOLA', descricao: 'Faz chorar, mas dá sabor à comida 😢' },
+        { item: '🥦', nome: 'BRÓCOLIS', descricao: 'Arvorezinha verde, muito nutritiva 🌳' },
+        { item: '🥬', nome: 'COUVE', descricao: 'Folha verde escura, cheia de ferro 💪' },
+        { item: '🫑', nome: 'PIMENTÃO', descricao: 'Verde, vermelho ou amarelo, bem colorido 🌈' },
+        { item: '🥖', nome: 'ABOBRINHA', descricao: 'Verde clarinha, gostosa refogada 🥒' },
+        
+        // Proteínas
+        { item: '🥩', nome: 'CARNE', descricao: 'Proteína importante para crescer forte 💪' },
+        { item: '🍗', nome: 'FRANGO', descricao: 'Carne branca, leve e saborosa 🐔' },
+        { item: '🐟', nome: 'PEIXE', descricao: 'Do mar ou rio, cheio de ômega 3 🌊' },
+        { item: '🥚', nome: 'OVO', descricao: 'Proteína perfeita, vem da galinha 🐔' },
+        { item: '🧀', nome: 'QUEIJO', descricao: 'Feito do leite, tem muito cálcio 🥛' },
+        
+        // Cereais e Grãos
+        { item: '🍞', nome: 'PÃO', descricao: 'Feito de trigo, base da alimentação 🌾' },
+        { item: '🍚', nome: 'ARROZ', descricao: 'Grãozinho branco, acompanha tudo 🍽️' },
+        { item: '🫘', nome: 'FEIJÃO', descricao: 'Pretinho ou colorido, dupla com arroz 🖤' },
+        { item: '🥜', nome: 'AMENDOIM', descricao: 'Oleaginosa que vira paçoca 🥜' },
+        { item: '🌰', nome: 'CASTANHA', descricao: 'Semente nutritiva da árvore 🌳' },
+        
+        // Massas
+        { item: '🍝', nome: 'MACARRÃO', descricao: 'Massa deliciosa com molho 🍅' },
+        { item: '🍕', nome: 'PIZZA', descricao: 'Massa redonda com cobertura gostosa 🔴' },
+        { item: '🥖', nome: 'PÃO FRANCÊS', descricao: 'Pãozinho crocante do café da manhã ☀️' },
+        
+        // Doces e Sobremesas
+        { item: '�🍯', nome: 'MEL', descricao: 'Doce natural feito pelas abelhas 🐝' },
+        { item: '🍫', nome: 'CHOCOLATE', descricao: 'Doce irresistível feito do cacau 🤤' },
+        { item: '🍰', nome: 'BOLO', descricao: 'Doce fofo para festas e comemorações 🎉' },
+        { item: '🧁', nome: 'CUPCAKE', descricao: 'Bolinho pequeno com cobertura 🎂' },
+        { item: '🍪', nome: 'BISCOITO', descricao: 'Crocante e doce para o lanche 🍪' },
+        { item: '🎂', nome: 'TORTA', descricao: 'Doce especial de aniversário 🎈' },
+        { item: '🍮', nome: 'PUDIM', descricao: 'Doce cremoso com calda de caramelo 🟫' },
+        { item: '🍭', nome: 'PIRULITO', descricao: 'Doce no palitinho, colorido 🌈' },
+        { item: '🍬', nome: 'BALA', descricao: 'Docinho pequeno para chupar 😋' },
+        { item: '🧊', nome: 'SORVETE', descricao: 'Gelado e doce para refrescar ❄️' },
+        
+        // Bebidas
+        { item: '🥛', nome: 'LEITE', descricao: 'Branquinho, cheio de cálcio para os ossos 🦴' },
+        { item: '💧', nome: 'ÁGUA', descricao: 'Transparente e essencial para viver 💎' },
+        { item: '🧃', nome: 'SUCO', descricao: 'Líquido doce das frutas 🍹' },
+        { item: '☕', nome: 'CAFÉ', descricao: 'Bebida escura dos adultos ☕' },
+        { item: '🍵', nome: 'CHÁ', descricao: 'Bebida quente das folhas 🌿' },
+        { item: '🥤', nome: 'REFRIGERANTE', descricao: 'Bebida doce com bolhinhas 🫧' },
+        
+        // Condimentos e Temperos
+        { item: '🧂', nome: 'SAL', descricao: 'Tempero branco que realça o sabor 🤍' },
+        { item: '🌶️', nome: 'PIMENTA', descricao: 'Ardida e vermelha, esquenta a boca 🔥' },
+        { item: '🍯', nome: 'AÇÚCAR', descricao: 'Adoça tudo, mas sem exagerar! 🍭' },
+        
+        // Lanches e Salgados
+        { item: '🥨', nome: 'PRETZEL', descricao: 'Biscoito salgado em formato especial 🥨' },
+        { item: '🍿', nome: 'PIPOCA', descricao: 'Milho que estoura e fica branquinho 💥' },
+        { item: '🥪', nome: 'SANDUÍCHE', descricao: 'Lanche com recheio entre pães 🥖' },
+        { item: '🌮', nome: 'TACO', descricao: 'Comida mexicana dobradinha 🇲🇽' },
+        { item: '🌯', nome: 'WRAP', descricao: 'Lanche enrolado na tortilha 🌯' },
+        { item: '🍔', nome: 'HAMBÚRGUER', descricao: 'Lanche com carne no pão 🍖' },
+        { item: '🍟', nome: 'BATATA FRITA', descricao: 'Palitinhos dourados e crocantes 🟡' },
+        
+        // Sopas e Caldos
+        { item: '🍲', nome: 'SOPA', descricao: 'Comida líquida e quentinha 🔥' },
+        { item: '🍜', nome: 'CALDO', descricao: 'Líquido nutritivo e saboroso 💚' },
+        
+        // Comidas Típicas
+        { item: '🍱', nome: 'MARMITA', descricao: 'Comida organizada na caixinha 📦' },
+        { item: '🥘', nome: 'ENSOPADO', descricao: 'Comida cozida com molho 🥄' },
+        { item: '🍳', nome: 'OVO FRITO', descricao: 'Ovinho na frigideira 🍳' }
+    ],
+    alimentos: [
+        // Frutas
+        { item: '🍎', nome: 'MAÇÃ', descricao: 'Fruta vermelha, crocante e doce 🌟' },
+        { item: '🍌', nome: 'BANANA', descricao: 'Fruta amarela, macia e nutritiva 💪' },
+        { item: '🍊', nome: 'LARANJA', descricao: 'Fruta cítrica, cheia de vitamina C ☀️' },
+        { item: '🍇', nome: 'UVA', descricao: 'Frutinhas roxas em cachos 🍷' },
+        { item: '🍓', nome: 'MORANGO', descricao: 'Vermelhinho e doce, com pontinhas 💕' },
+        { item: '🍑', nome: 'CEREJA', descricao: 'Pequenina e vermelha, bem docinha 🎈' },
+        { item: '🍐', nome: 'PÊRA', descricao: 'Fruta verdinha ou amarelinha, suculenta 💚' },
+        { item: '🍍', nome: 'ABACAXI', descricao: 'Fruta espinhosa por fora, doce por dentro 👑' },
+        { item: '🥝', nome: 'KIWI', descricao: 'Verdinho por fora, branquinho por dentro 🥽' },
+        { item: '🍉', nome: 'MELANCIA', descricao: 'Grande, verde e vermelha por dentro! 🍀' },
+        { item: '🍈', nome: 'MELÃO', descricao: 'Laranjinha por dentro, bem refrescante 🧡' },
+        { item: '🥭', nome: 'MANGA', descricao: 'Fruta tropical doce e suculenta 🌴' },
+        { item: '🥥', nome: 'COCO', descricao: 'Água fresquinha dentro da casca 💧' },
+        { item: '🍋', nome: 'LIMÃO', descricao: 'Azedinho, mas muito bom na limonada 😋' },
+        { item: '🫐', nome: 'MIRTILO', descricao: 'Frutinhas azuis pequeninas e doces 💙' },
+        
+        // Legumes e Verduras
         { item: '🥕', nome: 'CENOURA', descricao: 'Legume laranja, bom para os olhos 👀' },
-        { item: '🍯', nome: 'MEL', descricao: 'Doce natural feito pelas abelhas 🐝' }
+        { item: '🥬', nome: 'ALFACE', descricao: 'Folhinha verde para salada 🥗' },
+        { item: '🥒', nome: 'PEPINO', descricao: 'Verde e refrescante na salada 💚' },
+        { item: '🍅', nome: 'TOMATE', descricao: 'Vermelhinho e suculento 🔴' },
+        { item: '🌽', nome: 'MILHO', descricao: 'Grãozinhos amarelos na espiga 🌞' },
+        { item: '🥔', nome: 'BATATA', descricao: 'Tubérculo gostoso, vira purê! 🥄' },
+        { item: '🧄', nome: 'ALHO', descricao: 'Tempero forte e cheiroso 👃' },
+        { item: '🧅', nome: 'CEBOLA', descricao: 'Faz chorar, mas dá sabor à comida 😢' },
+        { item: '🥦', nome: 'BRÓCOLIS', descricao: 'Arvorezinha verde, muito nutritiva 🌳' },
+        { item: '🫑', nome: 'PIMENTÃO', descricao: 'Verde, vermelho ou amarelo, bem colorido 🌈' },
+        
+        // Proteínas
+        { item: '🥩', nome: 'CARNE', descricao: 'Proteína importante para crescer forte 💪' },
+        { item: '🍗', nome: 'FRANGO', descricao: 'Carne branca, leve e saborosa 🐔' },
+        { item: '🐟', nome: 'PEIXE', descricao: 'Do mar ou rio, cheio de ômega 3 🌊' },
+        { item: '🥚', nome: 'OVO', descricao: 'Proteína perfeita, vem da galinha 🐔' },
+        { item: '🧀', nome: 'QUEIJO', descricao: 'Feito do leite, tem muito cálcio 🥛' },
+        
+        // Grãos e Cereais
+        { item: '🍞', nome: 'PÃO', descricao: 'Feito de trigo, base da alimentação 🌾' },
+        { item: '🍚', nome: 'ARROZ', descricao: 'Grãozinho branco, acompanha tudo 🍽️' },
+        { item: '🥜', nome: 'AMENDOIM', descricao: 'Oleaginosa que vira paçoca 🥜' },
+        { item: '🌰', nome: 'CASTANHA', descricao: 'Semente nutritiva da árvore 🌳' },
+        
+        // Massas e Lanches
+        { item: '🍝', nome: 'MACARRÃO', descricao: 'Massa deliciosa com molho 🍅' },
+        { item: '🍕', nome: 'PIZZA', descricao: 'Massa redonda com cobertura gostosa 🔴' },
+        { item: '🥖', nome: 'PÃO FRANCÊS', descricao: 'Pãozinho crocante do café da manhã ☀️' },
+        { item: '🥪', nome: 'SANDUÍCHE', descricao: 'Lanche com recheio entre pães 🥖' },
+        { item: '🍔', nome: 'HAMBÚRGUER', descricao: 'Lanche com carne no pão 🍖' },
+        { item: '🍟', nome: 'BATATA FRITA', descricao: 'Palitinhos dourados e crocantes 🟡' },
+        { item: '🍿', nome: 'PIPOCA', descricao: 'Milho que estoura e fica branquinho 💥' },
+        { item: '🥨', nome: 'PRETZEL', descricao: 'Biscoito salgado em formato especial 🥨' },
+        
+        // Doces
+        { item: '🍯', nome: 'MEL', descricao: 'Doce natural feito pelas abelhas 🐝' },
+        { item: '🍫', nome: 'CHOCOLATE', descricao: 'Doce irresistível feito do cacau 🤤' },
+        { item: '🍰', nome: 'BOLO', descricao: 'Doce fofo para festas e comemorações 🎉' },
+        { item: '🧁', nome: 'CUPCAKE', descricao: 'Bolinho pequeno com cobertura 🎂' },
+        { item: '🍪', nome: 'BISCOITO', descricao: 'Crocante e doce para o lanche 🍪' },
+        { item: '🎂', nome: 'BOLO DE ANIVERSÁRIO', descricao: 'Doce especial de aniversário 🎈' },
+        { item: '🍮', nome: 'PUDIM', descricao: 'Doce cremoso com calda de caramelo 🟫' },
+        { item: '🍭', nome: 'PIRULITO', descricao: 'Doce no palitinho, colorido 🌈' },
+        { item: '🍬', nome: 'BALA', descricao: 'Docinho pequeno para chupar 😋' },
+        { item: '🍦', nome: 'SORVETE', descricao: 'Gelado e doce para refrescar ❄️' },
+        
+        // Bebidas
+        { item: '🥛', nome: 'LEITE', descricao: 'Branquinho, cheio de cálcio para os ossos 🦴' },
+        { item: '🧃', nome: 'SUCO', descricao: 'Líquido doce das frutas 🍹' },
+        { item: '☕', nome: 'CAFÉ', descricao: 'Bebida escura dos adultos ☕' },
+        { item: '🍵', nome: 'CHÁ', descricao: 'Bebida quente das folhas 🌿' },
+        { item: '🥤', nome: 'REFRIGERANTE', descricao: 'Bebida doce com bolhinhas 🫧' },
+        
+        // Temperos
+        { item: '🧂', nome: 'SAL', descricao: 'Tempero branco que realça o sabor 🤍' },
+        { item: '🌶️', nome: 'PIMENTA', descricao: 'Ardida e vermelha, esquenta a boca 🔥' },
+        
+        // Comidas Prontas
+        { item: '🍳', nome: 'OVO FRITO', descricao: 'Ovinho na frigideira 🍳' },
+        { item: '🍲', nome: 'SOPA', descricao: 'Comida líquida e quentinha 🔥' },
+        { item: '🍜', nome: 'MACARRÃO INSTANTÂNEO', descricao: 'Macarrão rápido e saboroso 💨' }
     ],
     transportes: [
+        // Veículos Terrestres - Carros e Similares
         { item: '🚗', nome: 'CARRO', descricao: 'Transporte de 4 rodas, faz VRUM VRUM 🛣️' },
+        { item: '🚙', nome: 'SUV', descricao: 'Carro grande e alto, para aventuras 🏔️' },
+        { item: '🚐', nome: 'VAN', descricao: 'Veículo grande para muitas pessoas 👨‍👩‍👧‍👦' },
+        { item: '🛻', nome: 'PICAPE', descricao: 'Carro com caçamba para carregar coisas 📦' },
+        { item: '🚕', nome: 'TÁXI', descricao: 'Carro amarelo que leva passageiros 🟡' },
+        { item: '🚔', nome: 'CARRO DE POLÍCIA', descricao: 'Veículo dos policiais, tem sirene 🚨' },
+        { item: '🚑', nome: 'AMBULÂNCIA', descricao: 'Leva pessoas doentes para o hospital 🏥' },
+        { item: '🚒', nome: 'CAMINHÃO DE BOMBEIROS', descricao: 'Combate incêndios com água 🔥' },
+        
+        // Veículos Pesados
+        { item: '🚛', nome: 'CAMINHÃO', descricao: 'Grande e forte, carrega muitas coisas 💪' },
+        { item: '🚚', nome: 'CAMINHONETE', descricao: 'Caminhão pequeno para entregas 📦' },
+        { item: '🚜', nome: 'TRATOR', descricao: 'Trabalha na fazenda, ara a terra 🌾' },
+        { item: '🏗️', nome: 'GUINDASTE', descricao: 'Levanta coisas muito pesadas ⬆️' },
+        { item: '🚧', nome: 'MÁQUINA DE CONSTRUÇÃO', descricao: 'Constrói estradas e casas 🏠' },
+        
+        // Transporte Público
         { item: '🚌', nome: 'ÔNIBUS', descricao: 'Transporte coletivo, leva muitas pessoas 👥' },
-        { item: '🚲', nome: 'BICICLETA', descricao: 'Duas rodas, pedalamos para andar 🚴' },
+        { item: '�', nome: 'ÔNIBUS ESCOLAR', descricao: 'Amarelo, leva crianças para escola 🎒' },
+        { item: '🚎', nome: 'ÔNIBUS ELÉTRICO', descricao: 'Ônibus que usa energia elétrica ⚡' },
+        { item: '🚐', nome: 'MICRO-ÔNIBUS', descricao: 'Ônibus pequeno para poucas pessoas 👥' },
+        
+        // Veículos de Duas Rodas
+        { item: '�🚲', nome: 'BICICLETA', descricao: 'Duas rodas, pedalamos para andar 🚴' },
+        { item: '🛴', nome: 'PATINETE', descricao: 'Duas rodas pequenas, empurramos com o pé 🦶' },
+        { item: '🏍️', nome: 'MOTOCICLETA', descricao: 'Moto rápida com motor barulhento 💨' },
+        { item: '🛵', nome: 'SCOOTER', descricao: 'Motinho pequena e econômica 🏃‍♂️' },
+        
+        // Transporte Ferroviário
+        { item: '🚂', nome: 'TREM', descricao: 'Anda nos trilhos, faz CHOO CHOO 🛤️' },
+        { item: '🚃', nome: 'VAGÃO', descricao: 'Parte do trem que carrega passageiros 🪑' },
+        { item: '🚄', nome: 'TREM BALA', descricao: 'Trem super rápido do Japão ⚡' },
+        { item: '🚅', nome: 'TREM DE ALTA VELOCIDADE', descricao: 'Trem moderno e veloz 🚀' },
+        { item: '🚆', nome: 'TREM ELÉTRICO', descricao: 'Trem que usa energia elétrica ⚡' },
+        { item: '🚇', nome: 'METRÔ', descricao: 'Trem subterrâneo da cidade 🏙️' },
+        { item: '🚈', nome: 'TREM URBANO', descricao: 'Transporte sobre trilhos na cidade 🌆' },
+        { item: '🚝', nome: 'MONOTRILHO', descricao: 'Trem que anda em um trilho só ➡️' },
+        
+        // Transporte Aéreo
         { item: '✈️', nome: 'AVIÃO', descricao: 'Voa pelo céu, faz UIIIIIII ☁️' },
-        { item: '🚂', nome: 'TREM', descricao: 'Anda nos trilhos, faz CHOO CHOO 🛤️' }
+        { item: '�️', nome: 'AVIÃO PEQUENO', descricao: 'Aviãozinho para poucas pessoas 👨‍✈️' },
+        { item: '🚁', nome: 'HELICÓPTERO', descricao: 'Voa com hélices que giram 🌀' },
+        { item: '🛸', nome: 'DISCO VOADOR', descricao: 'Nave espacial dos aliens 👽' },
+        { item: '🚀', nome: 'FOGUETE', descricao: 'Vai para o espaço com fogo 🔥' },
+        { item: '🛰️', nome: 'SATÉLITE', descricao: 'Fica no espaço e manda sinais 📡' },
+        
+        // Transporte Aquático
+        { item: '🚢', nome: 'NAVIO', descricao: 'Grande embarcação que navega no mar 🌊' },
+        { item: '⛵', nome: 'VELEIRO', descricao: 'Barco que usa o vento para navegar 💨' },
+        { item: '🛥️', nome: 'LANCHA', descricao: 'Barco rápido e moderno 💨' },
+        { item: '⛴️', nome: 'FERRY', descricao: 'Barco que transporta carros e pessoas 🚗' },
+        { item: '🛶', nome: 'CANOA', descricao: 'Barquinho pequeno com remo 🚣' },
+        { item: '🚤', nome: 'BARCO A MOTOR', descricao: 'Barco rápido com motor potente 🌊' }
+    ],
+    transportes: [
+        // Veículos Terrestres
+        { item: '🚗', nome: 'CARRO', descricao: 'Transporte de 4 rodas, faz VRUM VRUM 🛣️' },
+        { item: '🚙', nome: 'SUV', descricao: 'Carro grande e alto, para aventuras 🏔️' },
+        { item: '🚐', nome: 'VAN', descricao: 'Veículo grande para muitas pessoas 👨‍👩‍👧‍👦' },
+        { item: '🛻', nome: 'PICAPE', descricao: 'Carro com caçamba para carregar coisas 📦' },
+        { item: '🚕', nome: 'TÁXI', descricao: 'Carro amarelo que leva passageiros 🟡' },
+        { item: '🚔', nome: 'CARRO DE POLÍCIA', descricao: 'Veículo dos policiais, tem sirene 🚨' },
+        { item: '🚑', nome: 'AMBULÂNCIA', descricao: 'Leva pessoas doentes para o hospital 🏥' },
+        { item: '🚒', nome: 'CAMINHÃO DE BOMBEIROS', descricao: 'Combate incêndios com água 🔥' },
+        { item: '🚛', nome: 'CAMINHÃO', descricao: 'Grande e forte, carrega muitas coisas 💪' },
+        { item: '🚚', nome: 'CAMINHONETE', descricao: 'Caminhão pequeno para entregas 📦' },
+        { item: '🚜', nome: 'TRATOR', descricao: 'Trabalha na fazenda, ara a terra 🌾' },
+        
+        // Transporte Público
+        { item: '🚌', nome: 'ÔNIBUS', descricao: 'Transporte coletivo, leva muitas pessoas 👥' },
+        { item: '🚍', nome: 'ÔNIBUS ESCOLAR', descricao: 'Amarelo, leva crianças para escola 🎒' },
+        { item: '🚎', nome: 'ÔNIBUS ELÉTRICO', descricao: 'Ônibus que usa energia elétrica ⚡' },
+        
+        // Veículos de Duas Rodas
+        { item: '🚲', nome: 'BICICLETA', descricao: 'Duas rodas, pedalamos para andar 🚴' },
+        { item: '🛴', nome: 'PATINETE', descricao: 'Duas rodas pequenas, empurramos com o pé 🦶' },
+        { item: '🏍️', nome: 'MOTOCICLETA', descricao: 'Moto rápida com motor barulhento 💨' },
+        { item: '🛵', nome: 'SCOOTER', descricao: 'Motinho pequena e econômica 🏃‍♂️' },
+        
+        // Transporte Ferroviário
+        { item: '🚂', nome: 'TREM', descricao: 'Anda nos trilhos, faz CHOO CHOO 🛤️' },
+        { item: '🚃', nome: 'VAGÃO', descricao: 'Parte do trem que carrega passageiros 🪑' },
+        { item: '🚄', nome: 'TREM BALA', descricao: 'Trem super rápido do Japão ⚡' },
+        { item: '🚅', nome: 'TREM DE ALTA VELOCIDADE', descricao: 'Trem moderno e veloz 🚀' },
+        { item: '🚆', nome: 'TREM ELÉTRICO', descricao: 'Trem que usa energia elétrica ⚡' },
+        { item: '🚇', nome: 'METRÔ', descricao: 'Trem subterrâneo da cidade 🏙️' },
+        { item: '🚈', nome: 'TREM URBANO', descricao: 'Transporte sobre trilhos na cidade 🌆' },
+        { item: '🚝', nome: 'MONOTRILHO', descricao: 'Trem que anda em um trilho só ➡️' },
+        
+        // Transporte Aéreo
+        { item: '✈️', nome: 'AVIÃO', descricao: 'Voa pelo céu, faz UIIIIIII ☁️' },
+        { item: '🛩️', nome: 'AVIÃO PEQUENO', descricao: 'Aviãozinho para poucas pessoas 👨‍✈️' },
+        { item: '🚁', nome: 'HELICÓPTERO', descricao: 'Voa com hélices que giram 🌀' },
+        { item: '🚀', nome: 'FOGUETE', descricao: 'Vai para o espaço com fogo 🔥' },
+        
+        // Transporte Aquático
+        { item: '🚢', nome: 'NAVIO', descricao: 'Grande embarcação que navega no mar 🌊' },
+        { item: '⛵', nome: 'VELEIRO', descricao: 'Barco que usa o vento para navegar 💨' },
+        { item: '🛥️', nome: 'LANCHA', descricao: 'Barco rápido e moderno 💨' },
+        { item: '⛴️', nome: 'FERRY', descricao: 'Barco que transporta carros e pessoas 🚗' },
+        { item: '🛶', nome: 'CANOA', descricao: 'Barquinho pequeno com remo 🚣' },
+        { item: '🚤', nome: 'BARCO A MOTOR', descricao: 'Barco rápido com motor potente 🌊' }
+    ],
+    silabas: [
+        // Família do B
+        { item: '🍌', nome: 'BA', descricao: 'BA como em BANANA 🍌 - Exemplos: BANANA, BALA, BACIA, BARATA, BATATA' },
+        { item: '�', nome: 'BE', descricao: 'BE como em BEBÊ 👶 - Exemplos: BEBÊ, BEIJO, BELA, BECO, BERÇO' },
+        { item: '�', nome: 'BI', descricao: 'BI como em BICICLETA 🚲 - Exemplos: BICICLETA, BICO, BIBLIOTECA, BIGODE, BISCOITO' },
+        { item: '⚽', nome: 'BO', descricao: 'BO como em BOLA ⚽ - Exemplos: BOLA, BOCA, BONECA, BOLO, BORBOLETA' },
+        
+        // Transporte de Carga
+        { item: '🚛', nome: 'CAMINHÃO GRANDE', descricao: 'Transporta mercadorias pesadas 📦' },
+        { item: '🚜', nome: 'TRATOR AGRÍCOLA', descricao: 'Máquina que trabalha no campo 🌱' },
+        
+        // Veículos Urbanos
+        { item: '🛴', nome: 'PATINETE ELÉTRICO', descricao: 'Patinete moderno com bateria ⚡' },
+        { item: '�', nome: 'PATINS', descricao: 'Calçado com rodinhas para deslizar ⛸️' },
+        
+        // Transporte Histórico
+        { item: '🎠', nome: 'CARROSSEL', descricao: 'Cavalinhos que giram no parque 🎪' },
+        { item: '🎡', nome: 'RODA GIGANTE', descricao: 'Gira devagar mostrando a cidade 🎢' },
+        { item: '🎢', nome: 'MONTANHA RUSSA', descricao: 'Diversão radical que sobe e desce 🎭' }
     ],
     silabas: [
         // Família do B
@@ -327,14 +699,92 @@ const conteudo = {
         { item: '2️⃣', nome: 'DOIS', descricao: 'Número 2 - Dois olhinhos 👀' },
         { item: '3️⃣', nome: 'TRÊS', descricao: 'Número 3 - Três ursinhos 🧸🧸🧸' },
         { item: '4️⃣', nome: 'QUATRO', descricao: 'Número 4 - Quatro patas do gato 🐱' },
-        { item: '5️⃣', nome: 'CINCO', descricao: 'Número 5 - Cinco dedos da mão ✋' }
+        { item: '5️⃣', nome: 'CINCO', descricao: 'Número 5 - Cinco dedos da mão ✋' },
+        { item: '6️⃣', nome: 'SEIS', descricao: 'Número 6 - Seis pernas da formiga 🐜' },
+        { item: '7️⃣', nome: 'SETE', descricao: 'Número 7 - Sete cores do arco-íris 🌈' },
+        { item: '8️⃣', nome: 'OITO', descricao: 'Número 8 - Oito pernas da aranha 🕷️' },
+        { item: '9️⃣', nome: 'NOVE', descricao: 'Número 9 - Nove meses do bebê 👶' },
+        { item: '🔟', nome: 'DEZ', descricao: 'Número 10 - Dez dedinhos das mãos 🙌' }
     ],
     emocoes: [
+        // Emoções Básicas
         { item: '😊', nome: 'FELIZ', descricao: 'Sentimento de alegria e satisfação 😊' },
         { item: '😢', nome: 'TRISTE', descricao: 'Sentimento de tristeza e melancolia 😢' },
         { item: '😠', nome: 'BRAVO', descricao: 'Sentimento de raiva e irritação 😠' },
         { item: '😨', nome: 'MEDO', descricao: 'Sentimento de susto e apreensão 😨' },
-        { item: '😴', nome: 'SONO', descricao: 'Sentimento de cansaço e sonolência 😴' }
+        { item: '😴', nome: 'SONO', descricao: 'Sentimento de cansaço e sonolência 😴' },
+        
+        // Emoções de Alegria
+        { item: '😄', nome: 'MUITO FELIZ', descricao: 'Alegria grande, sorriso aberto 😄' },
+        { item: '😆', nome: 'RINDO', descricao: 'Gargalhada, muito divertido 😆' },
+        { item: '🤣', nome: 'GARGALHANDO', descricao: 'Rindo tanto que chora de rir 🤣' },
+        { item: '😂', nome: 'CHORANDO DE RIR', descricao: 'Muito engraçado, não para de rir 😂' },
+        { item: '🥰', nome: 'APAIXONADO', descricao: 'Sentimento de muito amor e carinho 🥰' },
+        { item: '😍', nome: 'ENCANTADO', descricao: 'Olhos de coração, muito admirado 😍' },
+        
+        // Emoções de Tristeza
+        { item: '😭', nome: 'CHORANDO', descricao: 'Muito triste, lágrimas escorrendo 😭' },
+        { item: '😥', nome: 'DECEPCIONADO', descricao: 'Triste e desapontado 😥' },
+        { item: '🥺', nome: 'CARENTE', descricao: 'Olhinho pidão, precisando de carinho 🥺' },
+        { item: '😞', nome: 'DESANIMADO', descricao: 'Sem energia, cabisbaixo 😞' },
+        
+        // Emoções de Raiva
+        { item: '😡', nome: 'MUITO BRAVO', descricao: 'Raiva intensa, vermelho de raiva 😡' },
+        { item: '🤬', nome: 'FURIOSO', descricao: 'Extremamente irritado 🤬' },
+        { item: '😤', nome: 'BUFANDO', descricao: 'Respirando fundo de raiva 😤' },
+        
+        // Emoções de Medo e Ansiedade
+        { item: '😰', nome: 'NERVOSO', descricao: 'Suando de nervosismo 😰' },
+        { item: '😱', nome: 'APAVORADO', descricao: 'Muito assustado, gritando 😱' },
+        { item: '😵', nome: 'TONTO', descricao: 'Zonzo, meio perdido 😵' },
+        { item: '🥴', nome: 'CONFUSO', descricao: 'Não entende o que está acontecendo 🥴' },
+        
+        // Emoções de Surpresa
+        { item: '😮', nome: 'SURPRESO', descricao: 'Boca aberta de surpresa 😮' },
+        { item: '😲', nome: 'CHOCADO', descricao: 'Muito surpreso, olhos arregalados 😲' },
+        { item: '🤯', nome: 'MENTE EXPLODINDO', descricao: 'Surpresa extrema, não acredita 🤯' },
+        
+        // Emoções Neutras e Calmas
+        { item: '😐', nome: 'NEUTRO', descricao: 'Sem expressão, normal 😐' },
+        { item: '😌', nome: 'ALIVIADO', descricao: 'Calmo e tranquilo 😌' },
+        { item: '🙂', nome: 'CONTENTE', descricao: 'Levemente feliz, sorriso simples 🙂' },
+        { item: '😇', nome: 'INOCENTE', descricao: 'Anjinho, comportado 😇' },
+        
+        // Emoções de Cansaço
+        { item: '😪', nome: 'SONOLENTO', descricao: 'Com sono, olhos pesados 😪' },
+        { item: '🥱', nome: 'BOCEJANDO', descricao: 'Abrindo a boca de sono 🥱' },
+        { item: '😫', nome: 'CANSADO', descricao: 'Exausto, muito cansado 😫' },
+        
+        // Emoções de Doença
+        { item: '🤒', nome: 'DOENTE', descricao: 'Com febre, termômetro na boca 🤒' },
+        { item: '🤧', nome: 'RESFRIADO', descricao: 'Espirrando, nariz escorrendo 🤧' },
+        { item: '🤢', nome: 'ENJOADO', descricao: 'Com náusea, passando mal 🤢' },
+        { item: '🤕', nome: 'MACHUCADO', descricao: 'Com curativo, se recuperando 🤕' },
+        
+        // Emoções Sociais
+        { item: '🤗', nome: 'ABRAÇANDO', descricao: 'Dando um abraço carinhoso 🤗' },
+        { item: '🤔', nome: 'PENSANDO', descricao: 'Refletindo, tentando entender 🤔' },
+        { item: '😏', nome: 'MAROTO', descricao: 'Sorriso travesso, arteiro 😏' },
+        { item: '😋', nome: 'GOSTOSO', descricao: 'Saboreando algo delicioso 😋' },
+        { item: '🤤', nome: 'COM ÁGUA NA BOCA', descricao: 'Desejando comer algo 🤤' },
+        
+        // Emoções de Vergonha
+        { item: '😳', nome: 'ENVERGONHADO', descricao: 'Vermelho de vergonha 😳' },
+        { item: '🙈', nome: 'TAPANDO OS OLHOS', descricao: 'Não quer ver, com vergonha 🙈' },
+        { item: '😅', nome: 'RIR DE NERVOSO', descricao: 'Rindo mas suando frio 😅' },
+        
+        // Emoções de Tédio
+        { item: '😑', nome: 'ENTEDIADO', descricao: 'Sem graça, sem interesse 😑' },
+        { item: '🙄', nome: 'REVIRANDO OS OLHOS', descricao: 'Achando chato ou óbvio 🙄' },
+        
+        // Emoções de Determinação
+        { item: '😤', nome: 'DETERMINADO', descricao: 'Focado, pronto para a ação 😤' },
+        { item: '🤨', nome: 'DESCONFIADO', descricao: 'Sobrancelha levantada, duvidando 🤨' },
+        
+        // Emoções Especiais
+        { item: '🥳', nome: 'COMEMORANDO', descricao: 'Festa, celebração 🥳' },
+        { item: '🤩', nome: 'DESLUMBRADO', descricao: 'Estrelas nos olhos, impressionado 🤩' },
+        { item: '😎', nome: 'DESCOLADO', descricao: 'Com óculos escuros, estiloso 😎' }
     ],
     rotina: [
         { item: '🌅', nome: 'ACORDAR', descricao: 'Levantar da cama de manhã 🌅' },
@@ -351,8 +801,7 @@ const conteudo = {
         { item: '🙏', nome: 'OBRIGADO', descricao: 'Agradecimento sincero 🙏' },
         { item: '🍽️', nome: 'VAMOS COMER', descricao: 'Convite para comer 🍽️' },
         { item: '🎮', nome: 'VAMOS BRINCAR', descricao: 'Convite para brincar 🎮' }
-    ],
-    jogos: jogosFuncionais
+    ]
 };
 
 const silabasData = {
@@ -708,26 +1157,8 @@ function carregarConteudo() {
         return;
     }
     
-    if (modo === 'jogos' && dadosAtuais.tipo) {
-        if (dadosAtuais.tipo === 'menu' || dadosAtuais.nome === 'ESCOLHER JOGO') {
-            jogosInterativos.mostrarMenuJogos();
-            return;
-        }
-    }
-    
     const isEmoji = dadosAtuais.item.match(/[\uD800-\uDBFF][\uDC00-\uDFFF]|[\u2600-\u27FF]/);
     const classe = isEmoji ? 'emoji' : (dadosAtuais.item.length === 1 ? 'letter' : 'word');
-    
-    let jogarButton = '';
-    if (modo === 'jogos' && dadosAtuais.tipo) {
-        jogarButton = `
-            <button class="jogar-btn" onclick="iniciarJogoEspecifico('${dadosAtuais.tipo}')" 
-                    style="background: #4caf50; color: white; border: none; padding: 15px 30px; 
-                           border-radius: 25px; font-size: 18px; cursor: pointer; margin: 20px;">
-                🎮 Jogar Agora!
-            </button>
-        `;
-    }
     
     activity.innerHTML = `
         <div class="${classe} animated" style="font-size: ${configuracoes.emojiSize * (isEmoji ? 72 : 48)}px;">
@@ -742,8 +1173,6 @@ function carregarConteudo() {
         <p style="color: #666; margin-top: 15px;">
             ${dadosAtuais.descricao}
         </p>
-        ${jogarButton}
-        ${modo === 'jogos' ? '<button class="jogar-btn" onclick="jogosInterativos.mostrarMenuJogos()" style="background: #2196f3; color: white; border: none; padding: 10px 20px; border-radius: 20px; cursor: pointer; margin: 10px;">🎯 Menu de Jogos</button>' : ''}
     `;
     
     document.getElementById('prevBtn').disabled = atual === 0;
@@ -759,10 +1188,6 @@ function carregarConteudo() {
     }
     
     verificarConquistas();
-}
-
-function iniciarJogoEspecifico(tipo) {
-    jogosInterativos.iniciarJogo(tipo);
 }
 
 function gerarTextoFala(dados) {
@@ -1380,381 +1805,6 @@ function inicializarEventos() {
     
     Debug.log('Todos os eventos foram inicializados', 'sucesso');
 }
-
-// Sistema de Jogos Interativos
-class JogosInterativos {
-    constructor() {
-        this.jogoAtual = null;
-        this.nivel = 1;
-        this.gameContainer = null;
-    }
-
-    iniciarJogoMemoria() {
-        this.jogoAtual = 'memoria';
-        const symbols = ['🐱', '🐶', '🐰', '🐸', '🦋', '🐝', '🌸', '⭐'];
-        const cards = [...symbols, ...symbols].sort(() => Math.random() - 0.5);
-        let flippedCards = [];
-        let matchedPairs = 0;
-
-        this.gameContainer.innerHTML = `
-            <div class="memory-game">
-                <h3>🎯 Jogo da Memória</h3>
-                <p>Encontre os pares iguais!</p>
-                <div class="memory-board">
-                    ${cards.map((symbol, index) => `
-                        <div class="memory-card" data-symbol="${symbol}" data-index="${index}">
-                            <div class="card-front">?</div>
-                            <div class="card-back">${symbol}</div>
-                        </div>
-                    `).join('')}
-                </div>
-                <button onclick="jogosInterativos.voltarMenu()" class="game-button">🏠 Voltar</button>
-            </div>
-        `;
-
-        this.adicionarEstilosMemoria();
-
-        document.querySelectorAll('.memory-card').forEach(card => {
-            card.addEventListener('click', () => {
-                if (card.classList.contains('flipped') || card.classList.contains('matched')) return;
-                
-                card.classList.add('flipped');
-                flippedCards.push(card);
-
-                if (flippedCards.length === 2) {
-                    const [card1, card2] = flippedCards;
-                    
-                    if (card1.dataset.symbol === card2.dataset.symbol) {
-                        card1.classList.add('matched');
-                        card2.classList.add('matched');
-                        matchedPairs++;
-                        
-                        if (matchedPairs === symbols.length) {
-                            setTimeout(() => {
-                                mostrarComemoracao('Você completou o jogo da memória!');
-                                mostrarNotificacao('Parabéns!', 'Você completou o jogo da memória!', '🎉');
-                            }, 500);
-                        }
-                    } else {
-                        setTimeout(() => {
-                            if (Math.random() < 0.3) {
-                                mostrarErro();
-                            }
-                            card1.classList.remove('flipped');
-                            card2.classList.remove('flipped');
-                        }, 1000);
-                    }
-                    
-                    flippedCards = [];
-                }
-            });
-        });
-    }
-
-    iniciarJogoCores() {
-        this.jogoAtual = 'cores';
-        const cores = [
-            { nome: 'VERMELHO', emoji: '🔴', cor: '#ff0000' },
-            { nome: 'AZUL', emoji: '🔵', cor: '#0000ff' },
-            { nome: 'VERDE', emoji: '🟢', cor: '#00ff00' },
-            { nome: 'AMARELO', emoji: '🟡', cor: '#ffff00' },
-            { nome: 'LARANJA', emoji: '🟠', cor: '#ffa500' },
-            { nome: 'ROXO', emoji: '🟣', cor: '#800080' }
-        ];
-        
-        let corAtual = cores[Math.floor(Math.random() * cores.length)];
-        let acertos = 0;
-
-        this.gameContainer.innerHTML = `
-            <div class="color-game">
-                <h3>🎪 Jogo de Cores</h3>
-                <p>Clique na cor: <strong>${corAtual.nome}</strong></p>
-                <div class="score">Acertos: <span id="gameScore">${acertos}</span></div>
-                <div class="color-buttons">
-                    ${cores.map(cor => `
-                        <button class="color-btn" 
-                                data-cor="${cor.nome}" 
-                                style="background-color: ${cor.cor}">
-                            ${cor.emoji}
-                        </button>
-                    `).join('')}
-                </div>
-                <button onclick="jogosInterativos.voltarMenu()" class="game-button">🏠 Voltar</button>
-            </div>
-        `;
-
-        this.adicionarEstilosCores();
-
-        document.querySelectorAll('.color-btn').forEach(btn => {
-            btn.addEventListener('click', () => {
-                if (btn.dataset.cor === corAtual.nome) {
-                    acertos++;
-                    document.getElementById('gameScore').textContent = acertos;
-                    btn.style.transform = 'scale(1.2)';
-                    setTimeout(() => btn.style.transform = 'scale(1)', 200);
-                    
-                    if (Math.random() < 0.4) {
-                        mostrarEncorajamento(`Muito bem! ${corAtual.nome}!`);
-                    } else {
-                        mostrarTexto(`Correto! ${corAtual.nome}!`);
-                    }
-                    
-                    setTimeout(() => {
-                        corAtual = cores[Math.floor(Math.random() * cores.length)];
-                        document.querySelector('.color-game p').innerHTML = `Clique na cor: <strong>${corAtual.nome}</strong>`;
-                    }, 1000);
-                    
-                    if (acertos >= 10) {
-                        mostrarComemoracao('Você acertou 10 cores!');
-                        mostrarNotificacao('Parabéns!', 'Você acertou 10 cores!', '🌈');
-                    }
-                } else {
-                    btn.style.backgroundColor = '#ff6b6b';
-                    
-                    if (Math.random() < 0.5) {
-                        mostrarErro();
-                    }
-                    setTimeout(() => {
-                        btn.style.backgroundColor = cores.find(c => c.nome === btn.dataset.cor).cor;
-                    }, 500);
-                }
-            });
-        });
-    }
-
-    iniciarJogoContagem() {
-        this.jogoAtual = 'contagem';
-        const objetos = ['🍎', '🌟', '🐝', '🎈', '🍭', '⚽'];
-        let objetoAtual = objetos[Math.floor(Math.random() * objetos.length)];
-        let quantidade = Math.floor(Math.random() * 5) + 1;
-        let acertos = 0;
-
-        this.gameContainer.innerHTML = `
-            <div class="counting-game">
-                <h3>🎲 Conta os Objetos</h3>
-                <p>Quantos objetos você vê?</p>
-                <div class="score">Acertos: <span id="gameScore">${acertos}</span></div>
-                <div class="objects-container">
-                    ${Array(quantidade).fill(objetoAtual).map(obj => `<span class="counting-object">${obj}</span>`).join('')}
-                </div>
-                <div class="number-buttons">
-                    ${[1,2,3,4,5].map(num => `
-                        <button class="number-btn" data-numero="${num}">${num}</button>
-                    `).join('')}
-                </div>
-                <button onclick="jogosInterativos.voltarMenu()" class="game-button">🏠 Voltar</button>
-            </div>
-        `;
-
-        this.adicionarEstilosContagem();
-
-        document.querySelectorAll('.number-btn').forEach(btn => {
-            btn.addEventListener('click', () => {
-                const numeroEscolhido = parseInt(btn.dataset.numero);
-                
-                if (numeroEscolhido === quantidade) {
-                    acertos++;
-                    document.getElementById('gameScore').textContent = acertos;
-                    btn.style.backgroundColor = '#4caf50';
-                    btn.style.color = 'white';
-                    
-                    if (Math.random() < 0.5) {
-                        mostrarEncorajamento(`Perfeito! São ${quantidade} objetos!`);
-                    } else {
-                        mostrarTexto(`Isso mesmo! ${quantidade}!`);
-                    }
-                    
-                    setTimeout(() => {
-                        objetoAtual = objetos[Math.floor(Math.random() * objetos.length)];
-                        quantidade = Math.floor(Math.random() * 5) + 1;
-                        
-                        document.querySelector('.objects-container').innerHTML = 
-                            Array(quantidade).fill(objetoAtual).map(obj => `<span class="counting-object">${obj}</span>`).join('');
-                        
-                        document.querySelectorAll('.number-btn').forEach(b => {
-                            b.style.backgroundColor = '#4fc3f7';
-                            b.style.color = 'white';
-                        });
-                    }, 1500);
-                    
-                    if (acertos >= 5) {
-                        mostrarComemoracao('Você é ótimo em contar!');
-                        mostrarNotificacao('Parabéns!', 'Você é ótimo em contar!', '🔢');
-                    }
-                } else {
-                    btn.style.backgroundColor = '#f44336';
-                    if (Math.random() < 0.4) {
-                        mostrarErro();
-                    }
-                    setTimeout(() => {
-                        btn.style.backgroundColor = '#4fc3f7';
-                    }, 1000);
-                }
-            });
-        });
-    }
-
-    iniciarJogo(tipo) {
-        if (!this.gameContainer) {
-            this.gameContainer = document.getElementById('activity');
-        }
-        
-        switch(tipo) {
-            case 'memoria':
-                this.iniciarJogoMemoria();
-                break;
-            case 'cores':
-                this.iniciarJogoCores();
-                break;
-            case 'contagem':
-                this.iniciarJogoContagem();
-                break;
-            default:
-                this.mostrarMenuJogos();
-        }
-    }
-
-    mostrarMenuJogos() {
-        if (!this.gameContainer) {
-            this.gameContainer = document.getElementById('activity');
-        }
-
-        this.gameContainer.innerHTML = `
-            <div class="games-menu">
-                <h2>🎮 Escolha seu Jogo!</h2>
-                <div class="games-grid">
-                    <button class="game-card-btn" onclick="jogosInterativos.iniciarJogo('memoria')">
-                        <div class="game-icon">🎯</div>
-                        <h3>Jogo da Memória</h3>
-                        <p>Encontre os pares!</p>
-                    </button>
-                    <button class="game-card-btn" onclick="jogosInterativos.iniciarJogo('cores')">
-                        <div class="game-icon">🎪</div>
-                        <h3>Jogo de Cores</h3>
-                        <p>Clique na cor certa!</p>
-                    </button>
-                    <button class="game-card-btn" onclick="jogosInterativos.iniciarJogo('contagem')">
-                        <div class="game-icon">🎲</div>
-                        <h3>Conta os Objetos</h3>
-                        <p>Quantos você vê?</p>
-                    </button>
-                </div>
-            </div>
-        `;
-
-        this.adicionarEstilosMenu();
-    }
-
-    voltarMenu() {
-        this.mostrarMenuJogos();
-    }
-
-    adicionarEstilosMenu() {
-        const style = document.createElement('style');
-        style.textContent = `
-            .games-menu { text-align: center; padding: 20px; }
-            .games-grid {
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-                gap: 20px;
-                margin: 20px 0;
-            }
-            .game-card-btn {
-                background: linear-gradient(135deg, #4fc3f7, #2196f3);
-                border: none;
-                border-radius: 15px;
-                padding: 20px;
-                cursor: pointer;
-                transition: transform 0.3s ease;
-                color: white;
-                box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-                font-size: 18px;
-            }
-            .game-card-btn:hover { transform: translateY(-5px); }
-            .game-icon { font-size: 48px; margin-bottom: 10px; }
-        `;
-        document.head.appendChild(style);
-    }
-
-    adicionarEstilosMemoria() {
-        const style = document.createElement('style');
-        style.textContent = `
-            .memory-game { text-align: center; padding: 20px; }
-            .memory-board {
-                display: grid;
-                grid-template-columns: repeat(4, 1fr);
-                gap: 10px;
-                max-width: 400px;
-                margin: 20px auto;
-            }
-            .memory-card {
-                width: 80px; height: 80px; background: #4fc3f7; border-radius: 10px;
-                display: flex; align-items: center; justify-content: center;
-                cursor: pointer; position: relative; transition: transform 0.3s ease;
-            }
-            .memory-card:hover { transform: scale(1.05); }
-            .memory-card.flipped .card-front { display: none; }
-            .memory-card.flipped .card-back { display: block; }
-            .memory-card.matched { background: #4caf50; }
-            .card-front { font-size: 24px; color: white; }
-            .card-back { font-size: 24px; display: none; }
-            .game-button {
-                background: #4caf50; color: white; border: none;
-                padding: 12px 24px; border-radius: 20px;
-                cursor: pointer; margin: 10px; font-size: 16px;
-            }
-        `;
-        document.head.appendChild(style);
-    }
-
-    adicionarEstilosCores() {
-        const style = document.createElement('style');
-        style.textContent = `
-            .color-game { text-align: center; padding: 20px; }
-            .color-buttons {
-                display: grid;
-                grid-template-columns: repeat(3, 1fr);
-                gap: 15px;
-                max-width: 300px;
-                margin: 20px auto;
-            }
-            .color-btn { 
-                width: 80px; height: 80px; border: 3px solid white; 
-                border-radius: 50%; cursor: pointer; font-size: 24px;
-                transition: transform 0.3s ease;
-                display: flex; align-items: center; justify-content: center;
-            }
-            .color-btn:hover { transform: scale(1.1); }
-        `;
-        document.head.appendChild(style);
-    }
-
-    adicionarEstilosContagem() {
-        const style = document.createElement('style');
-        style.textContent = `
-            .counting-game { text-align: center; padding: 20px; }
-            .objects-container { 
-                background: #e3f2fd; padding: 20px; border-radius: 15px; 
-                margin: 20px auto; max-width: 300px; min-height: 100px;
-                display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 10px;
-            }
-            .counting-object { font-size: 32px; animation: bounce 2s infinite; }
-            .number-buttons {
-                display: flex; gap: 10px; justify-content: center; margin: 20px 0;
-            }
-            .number-btn { 
-                width: 50px; height: 50px; background: #4fc3f7; color: white; 
-                border: none; border-radius: 50%; cursor: pointer; font-size: 20px;
-                transition: all 0.3s ease;
-            }
-            .number-btn:hover { transform: scale(1.1); }
-        `;
-        document.head.appendChild(style);
-    }
-}
-
-// Cria instância global dos jogos
-const jogosInterativos = new JogosInterativos();
 
 // Inicializa a aplicação quando o DOM estiver pronto
 document.addEventListener('DOMContentLoaded', () => {
